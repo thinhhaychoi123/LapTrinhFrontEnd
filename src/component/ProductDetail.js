@@ -1,3 +1,4 @@
+// ------------------ProductDetail.js-------------------
 import { useLoaderData, useNavigate } from "react-router-dom";
 import productData from "../data/ProductData";
 import { useState } from "react";
@@ -137,3 +138,4 @@ export default function ProductDetail() {
         </section>
     );
 }
+// -------------------------------------

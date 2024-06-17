@@ -1,3 +1,4 @@
+// ----------------------useLocalStorage.js----------------------
 import {useState} from "react";
 
 export function useLocalStorage(key, initialValue) {
@@ -17,3 +18,4 @@ export function useLocalStorage(key, initialValue) {
     };
     return [storedValue, setValue];
 }
+// ---------------------------------------------------------

@@ -1,3 +1,4 @@
+// -----------------------RootReducer.js-----------------------
 import { createReducer } from '@reduxjs/toolkit';
 
 const initState = {
@@ -46,3 +47,4 @@ function checkCart() {
 function saveCart(cart) {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
+// ----------------------------------------

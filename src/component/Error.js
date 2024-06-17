@@ -1,3 +1,4 @@
+// ----------------Error.js------------
 import { useRouteError } from "react-router-dom";
 
 export default function Error() {
@@ -13,3 +14,4 @@ export default function Error() {
         </div>
     );
 }
+// ----------------Error.js------------

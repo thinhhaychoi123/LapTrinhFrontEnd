@@ -1,3 +1,4 @@
+// ---------------------ProductList.js---------------------
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { CartInfo } from "./CartInfo";
@@ -79,3 +80,4 @@ function Product(data) {
         </div>
     );
 }
+// -----------------------------------
