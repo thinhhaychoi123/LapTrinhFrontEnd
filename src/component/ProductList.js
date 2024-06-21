@@ -9,7 +9,7 @@ export default function ProductList() {
 
     return (
         <div>
-            <div className="row">
+            <div className="row row-cols-1 row-cols-md-3 g-4 d-flex justify-content-center">
                 {products.map(product => (
                     <Product 
                         key={product.id}

@@ -67,9 +67,7 @@ export default function ProductDetail() {
                                 <div className="mt-4">
                                     <p className="fs-2 text-primary">{product.location}</p>
                                     <p>
-                                        Đây là một tour du lịch đặc biệt kéo dài 4 ngày 3 đêm qua các thành phố nổi tiếng của Trung Quốc như Thượng Hải, Tô Châu, Ô Trấn và Hàng Châu. 
-                                        Quý khách sẽ có cơ hội tham quan những địa danh lịch sử, trải nghiệm văn hóa phong phú và thưởng thức các món ăn đặc sản. 
-                                        Đừng bỏ lỡ cơ hội tuyệt vời này để khám phá vẻ đẹp và sự quyến rũ của vùng đất này.
+                                        {product.content}
                                     </p>
                                 </div>
                             </div>
