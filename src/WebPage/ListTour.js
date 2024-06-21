@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../WebPage/Navbar";
 import Footer from "../WebPage/Footer";
 
+
 export default function ListTour() {
     const [selectedLocation, setSelectedLocation] = useState('Tất cả');
     const products = useSelector(state => state.products);
@@ -15,6 +16,12 @@ export default function ListTour() {
     };
 
     const filteredProducts = selectedLocation === 'Tất cả' ? products : products.filter(product => product.tour.includes(selectedLocation));
+
+
+import products from "../data/ProductData";
+
+export default function ListTour() {
+    
 
     return (
         <div>
@@ -30,7 +37,11 @@ export default function ListTour() {
                             {/* Lọc theo địa điểm */}
                             <div className="form-group">
                                 <label htmlFor="location">Địa điểm:</label>
+
                                 <select className="form-control" id="location" value={selectedLocation} onChange={handleLocationChange}>
+
+                                <select className="form-control" id="location" >
+
                                     <option>Tất cả</option>
                                     <option>Hà Nội</option>
                                     <option>Đà Nẵng</option>
@@ -70,14 +81,22 @@ export default function ListTour() {
                                 {/* Thêm các tùy chọn giá tour khác */}
                             </div>
 
+
                             <button type="button" className="btn btn-primary" onClick={() => setSelectedLocation(selectedLocation)}>Áp dụng bộ lọc</button>
+
+                            <button type="button" className="btn btn-primary">Áp dụng bộ lọc</button>
+
                             </div>
                     </div>
                 </div>
                     <div className="col-md-9">
                     <h2>Danh sách sản phẩm</h2>
 
+
                         {filteredProducts.map(product => (
+
+                        {products.map(product => (
+
                             <Product 
                                 key={product.id}
                                 id={product.id}

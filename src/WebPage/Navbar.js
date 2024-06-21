@@ -1,6 +1,13 @@
+// ---------------------------Navbar.js---------------------------
 import React from 'react';
 import logo from '../Image/tour.png';
+import {useSelector} from "react-redux";
+import {Link} from "react-router-dom";
+import ListTour from "./ListTour";
+
 const Navbar = () => {
+  const cart = useSelector(state => state.cart);
+
 return(
     <div>
           <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -17,14 +24,15 @@ return(
               <a class="nav-link active" aria-current="page" href="#">Trang chủ</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Tour trong nước</a>
+              <Link to="/list-tour" class="nav-link" href="#">Tour trong nước</Link>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Tour nước ngoài</a>
             </li>
           </ul>
+          
             <span class="navbar-text">
-                <i class="bi bi-bag fs-2"></i>
+                <i class="bi bi-bag fs-2">{cart.length}</i>
             </span>
         </div>
       </div>
@@ -33,3 +41,4 @@ return(
 );
 };
 export default Navbar;
+// ---------------------
