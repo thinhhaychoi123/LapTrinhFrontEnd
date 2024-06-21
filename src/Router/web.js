@@ -1,16 +1,16 @@
 // ---------------------------web.js---------------------------
-import {createBrowserRouter} from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import ProductList from "../component/ProductList";
-import ProductDetail from "../component/ProductDetail";
-import {loadProduct} from "../component/ProductDetail";
+import ProductDetail, { loadProduct } from "../component/ProductDetail";
 import Error from "../component/Error";
-import {News} from "../component/News";
+import { News } from "../component/News";
 import React from "react";
 import Navbar from "../WebPage/Navbar";
 import Search from "../WebPage/Search";
 import Footer from "../WebPage/Footer";
 import Service from "../WebPage/Service";
+import ListTour from "../WebPage/ListTour";
 
 export const router = createBrowserRouter([
     {
@@ -38,6 +38,10 @@ export const router = createBrowserRouter([
                 path: 'product/:id',
                 element: <ProductDetail />,
                 loader: loadProduct,
+            },
+            {
+                path: 'list-tour',
+                element: <ListTour />
             }
         ]
     },
@@ -47,4 +51,5 @@ export const router = createBrowserRouter([
         errorElement: <Error />,
     }
 ]);
+
 // ---------------------------------------------------------
