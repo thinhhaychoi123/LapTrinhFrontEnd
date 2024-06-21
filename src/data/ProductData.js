@@ -2,7 +2,8 @@
 const products = [
     {
         id: 1,
-        start:"Hồ Chí Minh",
+        tour:"Trung Quốc",
+        point:"9.3 Tuyệt vời",
         name: "Tour Trung Quốc 4N3Đ: Giang Nam Hành - Thượng Hải - Tô Châu - Ô Trấn - Hàng Châu",
         time:"4 ngày 4 đêm",
         schedule:"23/06/2024",//lịch trình
@@ -14,7 +15,9 @@ const products = [
     },
     {
         id: 2,
+        tour:"Thái Lan",
         time:"5 ngày 4 đêm",
+        point:"9.0 Tuyệt vời",
         schedule:"17/06/2024",//lịch trình
         name: "Tour Thái Lan 5N4Đ: HCM - Xứ Sở Chùa Vàng - Bangkok - Pattaya - Công Viên Khủng Long (Bay Sáng, Trưa)",
         image: "https://cdn2.ivivu.com/2019/10/03/11/ivivu-tran-bao-phat-son1-360x225.jpg",
@@ -24,7 +27,9 @@ const products = [
     },
     {
         id: 3,
+        tour:"Trung Quốc",
         time:"6 ngày 5 đêm",
+        point:"8.0 Rất tốt",
         schedule:"19/06/2024",//lịch trình
         name: "Tour Trung Quốc 6N5Đ: HCM - Thành Đô - Cửu Trại Câu - Đô Giang Yển - Công Viên Gấu Trúc",
         image: "https://cdn2.ivivu.com/2023/05/10/14/ivivu-cuu-trai-cau-thac-nuoc-360x225.jpg",
@@ -34,13 +39,27 @@ const products = [
     },
     {
         id: 4,
+        tour:"Trung Quốc",
         time:"5 ngày 4 đêm",
+        point:"8.5 Rất tốt",
         schedule:"26/06/2024",//lịch trình
         name: "Tour Trung Quốc 5N4Đ: HCM - Lệ Giang - Đại Lý - Shangrila (Bay Thẳng VJ)",
         image: "https://cdn2.ivivu.com/2024/06/06/10/nui-tuyet-ngoc-long-ivv-360x225.gif",
         location:"Tour Trung Quốc 5N4Đ: Lệ Giang - Shangrila (Bay Thẳng)",
         content:"Khám phá vẻ đẹp hùng vĩ của Lệ Giang và Shangrila trong 5 ngày 4 đêm. Thưởng ngoạn cảnh quan thiên nhiên tại Khe Hổ Nhảy và Núi Tuyết Ngọc Long, tham quan các di sản văn hóa như Thành cổ DuKeZong và Tu viện Songzanlin. Trải nghiệm văn hóa độc đáo của người Naxi và Tạng, cùng với những khoảnh khắc đáng nhớ tại Công viên Hắc Long Đàm và Ngọc Thủy Trại. Cùng iVIVU khám phá ngay hôm nay!",
-        price: 100,
+        price: "10.000.000",
+    },
+    {
+        id: 4,
+        tour:"Đà Nẵng",
+        time:"5 ngày 4 đêm",
+        point:"8.5 Rất tốt",
+        schedule:"26/06/2024",//lịch trình
+        name: "Tour Trung Quốc 5N4Đ: HCM - Lệ Giang - Đại Lý - Shangrila (Bay Thẳng VJ)",
+        image: "https://cdn2.ivivu.com/2024/06/06/10/nui-tuyet-ngoc-long-ivv-360x225.gif",
+        location:"Tour Trung Quốc 5N4Đ: Lệ Giang - Shangrila (Bay Thẳng)",
+        content:"Khám phá vẻ đẹp hùng vĩ của Lệ Giang và Shangrila trong 5 ngày 4 đêm. Thưởng ngoạn cảnh quan thiên nhiên tại Khe Hổ Nhảy và Núi Tuyết Ngọc Long, tham quan các di sản văn hóa như Thành cổ DuKeZong và Tu viện Songzanlin. Trải nghiệm văn hóa độc đáo của người Naxi và Tạng, cùng với những khoảnh khắc đáng nhớ tại Công viên Hắc Long Đàm và Ngọc Thủy Trại. Cùng iVIVU khám phá ngay hôm nay!",
+        price: "10.000.000",
     },
     
 

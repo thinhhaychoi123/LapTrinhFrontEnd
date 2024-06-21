@@ -1,7 +1,6 @@
 // ---------------------ProductList.js---------------------
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { CartInfo } from "./CartInfo";
 import { Link } from "react-router-dom";
 
 export default function ProductList() {
@@ -10,7 +9,6 @@ export default function ProductList() {
 
     return (
         <div>
-            <CartInfo />
             <div className="row">
                 {products.map(product => (
                     <Product 
@@ -25,6 +23,8 @@ export default function ProductList() {
                         price={product.price}
                         start ={product.start}
                         image1={product.image1}
+                        point={product.point}
+                        tour = {product.tour}
 
 
                         url={product.url}
@@ -39,45 +39,39 @@ export default function ProductList() {
     );
 }
 
-function Product(data) {
-    const [product, setProduct] = useState(data);
+function Product({ id, name, time, image, schedule, price, color, isBuying }) {
     const dispatch = useDispatch();
 
     const changeColor = () => {
-        if (product.isBuying) {
-            dispatch({ type: 'cart.minus', payload: { product } });
+        if (isBuying) {
+            dispatch({ type: 'cart.minus', payload: { product: { id } } });
         } else {
-            dispatch({ type: 'cart.add', payload: { product } });
+            dispatch({ type: 'cart.add', payload: { product: { id, name, time, image, schedule, price, color, isBuying } } });
         }
-        setProduct(prevState => ({
-            ...prevState,
-            color: prevState.color === 'blue' ? 'red' : 'blue',
-            isBuying: !prevState.isBuying
-        }));
-    }
+    };
 
     return (
         <div className="col" style={{ width: '18rem' }}>
             <div className="card h-100">
-
-            <img src={product.image} className="card-img-top" alt={product.name} />
-            <div className="card-body">
-                <h5 className="card-title">{product.name}</h5>
-                <p className="card-text"> <i class="bi bi-clock"></i> {product.time}</p>
-                <p className="card-text "> <i class="bi bi-calendar-event"></i> {product.schedule}</p>
-                <p className="card-text text-warning fs-4 fw-bolder">{product.price} VNĐ</p>
-                <a
-                    onClick={changeColor}
-                    className={`btn text-center p-2 pl-2 pr-2 ${product.color === 'red' ? 'btn-danger' : 'btn-primary'}`}
-                >
-                    {product.isBuying ? "LOẠI BỎ" : "THÊM"}
-                </a>
-                <Link to={`/product/${product.id}`} className="btn btn-success p-2 pl-2 pr-2">
-                    XEM
-                </Link>
-            </div>
+                <img src={image} className="card-img-top" alt={name} />
+                <div className="card-body">
+                    <h5 className="card-title">{name}</h5>
+                    <p className="card-text"><i className="bi bi-clock"></i> {time}</p>
+                    <p className="card-text"><i className="bi bi-calendar-event"></i> {schedule}</p>
+                    <p className="card-text text-warning fs-4 fw-bolder">{price} VNĐ</p>
+                    <a
+                        onClick={changeColor}
+                        className={`btn text-center p-2 pl-2 pr-2 ${color === 'red' ? 'btn-danger' : 'btn-primary'}`}
+                    >
+                        {isBuying ? "LOẠI BỎ" : "THÊM"}
+                    </a>
+                    <Link to={`/product/${id}`} className="btn btn-success p-2 pl-2 pr-2">
+                        XEM
+                    </Link>
+                </div>
             </div>
         </div>
     );
 }
+
 // -----------------------------------
