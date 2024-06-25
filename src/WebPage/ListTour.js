@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../WebPage/Navbar";
 import Footer from "../WebPage/Footer";
 
+
 export default function ListTour() {
     const [selectedLocation, setSelectedLocation] = useState('Tất cả');
     const [startDate, setStartDate] = useState('');
@@ -51,29 +52,35 @@ export default function ListTour() {
         sortedProducts.sort((a, b) => parseFloat(a.price.replace(/\./g, '')) - parseFloat(b.price.replace(/\./g, '')));
     }
 
+
+import products from "../data/ProductData";
+
+export default function ListTour() {
+    
+
     return (
         <div>
             <Navbar />
             <div className="container mt-4">
                 <h1 className="mb-4">Tìm kiếm tour du lịch</h1>
                 <div className="row">
-                    <div className="col-md-3">
-                        {/* Bộ lọc sản phẩm */}
-                        <div className="card">
-                            <h5 className="card-header">Bộ lọc</h5>
-                            <div className="card-body">
-                                {/* Lọc theo địa điểm */}
-                                <div className="form-group">
-                                    <label htmlFor="location">Địa điểm:</label>
-                                    <select className="form-control" id="location" value={selectedLocation} onChange={handleLocationChange}>
-                                        <option>Tất cả</option>
-                                        <option>Hà Nội</option>
-                                        <option>Đà Nẵng</option>
-                                        <option>Phú Quốc</option>
-                                        <option>Trung Quốc</option>
-                                        {/* Thêm các tùy chọn địa điểm khác */}
-                                    </select>
-                                </div>
+                <div className="col-md-3">
+                    {/* Bộ lọc sản phẩm */}
+                    <div className="card">
+                        <h5 className="card-header">Bộ lọc</h5>
+                        <div className="card-body">
+                            {/* Lọc theo địa điểm */}
+                            <div className="form-group">
+                                <label htmlFor="location">Địa điểm:</label>
+                                <select className="form-control" id="location" value={selectedLocation} onChange={handleLocationChange}>
+                                    <option>Tất cả</option>
+                                    <option>Hà Nội</option>
+                                    <option>Đà Nẵng</option>
+                                    <option>Phú Quốc</option>
+                                    <option>Trung Quốc</option>
+                                    {/* Thêm các tùy chọn địa điểm khác */}
+                                </select>
+                            </div>
 
                                 {/* Lọc theo thời gian */}
                                 <div className="form-group">
@@ -87,53 +94,35 @@ export default function ListTour() {
                                     </select>
                                 </div>
 
-                                {/* Lọc theo giá tour */}
-                                <div className="form-group">
-                                    <label>Giá tour:</label>
-                                    <div className="form-check">
-                                        <input className="form-check-input" type="checkbox" id="price1" />
-                                        <label className="form-check-label" htmlFor="price1">
-                                            Dưới 1 triệu
-                                        </label>
-                                    </div>
-                                    <div className="form-check">
-                                        <input className="form-check-input" type="checkbox" id="price2" />
-                                        <label className="form-check-label" htmlFor="price2">
-                                            Từ 1-5 triệu
-                                        </label>
-                                    </div>
-                                    {/* Thêm các tùy chọn giá tour khác */}
+                            {/* Lọc theo giá tour */}
+                            <div className="form-group">
+                                <label>Giá tour:</label>
+                                <div className="form-check">
+                                    <input className="form-check-input" type="checkbox" id="price1" />
+                                    <label className="form-check-label" htmlFor="price1">
+                                        Dưới 1 triệu
+                                    </label>
                                 </div>
+                                <div className="form-check">
+                                    <input className="form-check-input" type="checkbox" id="price2" />
+                                    <label className="form-check-label" htmlFor="price2">
+                                        Từ 1-5 triệu
+                                    </label>
+                                </div>
+                                {/* Thêm các tùy chọn giá tour khác */}
+                            </div>
 
-                                <button type="button" className="btn btn-primary" onClick={() => setSelectedLocation(selectedLocation)}>Áp dụng bộ lọc</button>
+                            <button type="button" className="btn btn-primary" onClick={() => setSelectedLocation(selectedLocation)}>Áp dụng bộ lọc</button>
                             </div>
                         </div>
                     </div>
                     <div className="col-md-9">
+                    <h2>Danh sách sản phẩm</h2>
 
-                        <div className="d-flex justify-content-evenly mb-3">
-                            <button 
-                                className={`btn btn-outline-primary ${sortCriterion === 'time' ? 'active' : ''}`}
-                                onClick={() => handleSortChange('time')}
-                            >
-                                Thời lượng tour
-                            </button>
-                            <button 
-                                className={`btn btn-outline-primary ${sortCriterion === 'startDate' ? 'active' : ''}`}
-                                onClick={() => handleSortChange('startDate')}
-                            >
-                                Ngày khởi hành
-                            </button>
-                            <button 
-                                className={`btn btn-outline-primary ${sortCriterion === 'price' ? 'active' : ''}`}
-                                onClick={() => handleSortChange('price')}
-                            >
-                                Giá Tour
-                            </button>
-                        </div>
-
-                        <h2>Danh sách sản phẩm</h2>
                         {filteredProducts.map(product => (
+
+                        {products.map(product => (
+
                             <Product 
                                 key={product.id}
                                 id={product.id}
