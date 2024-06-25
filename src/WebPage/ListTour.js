@@ -50,13 +50,7 @@ export default function ListTour() {
         sortedProducts.sort((a, b) => new Date(a.schedule) - new Date(b.schedule));
     } else if (sortCriterion === 'price') {
         sortedProducts.sort((a, b) => parseFloat(a.price.replace(/\./g, '')) - parseFloat(b.price.replace(/\./g, '')));
-    }
-
-
-import products from "../data/ProductData";
-
-export default function ListTour() {
-    
+    }    
 
     return (
         <div>
@@ -120,9 +114,6 @@ export default function ListTour() {
                     <h2>Danh sách sản phẩm</h2>
 
                         {filteredProducts.map(product => (
-
-                        {products.map(product => (
-
                             <Product 
                                 key={product.id}
                                 id={product.id}
