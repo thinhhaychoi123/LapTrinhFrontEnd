@@ -1,16 +1,46 @@
+// Search.js
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import background from '../Image/background.png';
 
 const Search = () => {
-    
+    const [location, setLocation] = useState('');
+    const [startDate, setStartDate] = useState('');
+    const [departure, setDeparture] = useState('');
+    const navigate = useNavigate();
+
+    const handleSearch = (e) => {
+        e.preventDefault();
+        const queryParams = new URLSearchParams({
+            location,
+            startDate,
+            departure
+        }).toString();
+        navigate(`/list-tour?${queryParams}`);
+    };
+
     return (
-        <div className="container search-bar">
-            <form>
-                <div className="row">
+        <div className="search-bar" style={{
+            height:'400px',
+            backgroundImage: `url(${background})`, 
+            backgroundSize: 'cover', 
+            backgroundPosition: 'center', 
+            backgroundRepeat: 'no-repeat'
+        }}>
+            <form onSubmit={handleSearch}>
+                <div className="row position-relative" style={{
+                    left: '200px',
+                    top: '60px'
+                }}>
                     <div className="col-md-4">
                         <div className='d-block mb-2'>
                             <label htmlFor="location">Địa điểm:</label>
-                            <select className="form-control" id="location">
+                            <select 
+                                className="form-control" 
+                                id="location" 
+                                value={location} 
+                                onChange={(e) => setLocation(e.target.value)}
+                            >
                                 <option value="">Tất cả</option>
                                 <option value="Hà Nội">Hà Nội</option>
                                 <option value="Đà Nẵng">Đà Nẵng</option>
@@ -21,13 +51,23 @@ const Search = () => {
                             </select>
                         </div>
                     </div>
-
                     <div className='d-flex'>
                         <div className="col-md-3 me-2">
-                            <input type="date" className="form-control" defaultValue="2024-06-18" />
+                            <input 
+                                type="date" 
+                                className="form-control" 
+                                value={startDate} 
+                                onChange={(e) => setStartDate(e.target.value)} 
+                            />
                         </div>
                         <div className="col-md-3">
-                            <input type="text" className="form-control" placeholder="Khởi hành từ" />
+                            <input 
+                                type="text" 
+                                className="form-control" 
+                                placeholder="Khởi hành từ" 
+                                value={departure} 
+                                onChange={(e) => setDeparture(e.target.value)} 
+                            />
                         </div>
                         <div className="col-md-2">
                             <button type="submit" className="btn btn-warning w-100">Tìm</button>
@@ -37,6 +77,6 @@ const Search = () => {
             </form>
         </div>
     );
-}
+};
 
 export default Search;

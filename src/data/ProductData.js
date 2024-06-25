@@ -23,7 +23,7 @@ const products = [
         image: "https://cdn2.ivivu.com/2019/10/03/11/ivivu-tran-bao-phat-son1-360x225.jpg",
         location:"Tour Thái Lan 5N4Đ: HCM - Xứ Sở Chùa Vàng - Bangkok - Pattaya - Công Viên Khủng Long",
         content:"Chuyến du lịch 5 ngày từ Sài Gòn đến Bangkok và Pattaya sẽ đưa bạn từ việc thưởng thức bữa tối tại sân bay Bangkok, khám phá cảnh đẹp Pattaya với chợ nổi và massage Thái, đến trải nghiệm biển tại Đảo San Hô Koh Larn và tham quan vườn nhiệt đới Nong Nooch. Bạn cũng sẽ thăm Bảo tàng ánh sáng và mua sắm tại Icon Siam ở Bangkok. Chuyến đi kết thúc với viếng Chùa Thuyền, Chùa Phật Vàng và dạo thuyền trên Sông Chao Phraya, trước khi thưởng thức bữa trưa tại Baiyoke Sky và trở về Việt Nam. Hãy cùng iVIVU khám phá ngay!",
-        price: "5.990.000",
+        price: "3.990.000",
     },
     {
         id: 3,
@@ -47,7 +47,7 @@ const products = [
         image: "https://cdn2.ivivu.com/2024/06/06/10/nui-tuyet-ngoc-long-ivv-360x225.gif",
         location:"Tour Trung Quốc 5N4Đ: Lệ Giang - Shangrila (Bay Thẳng)",
         content:"Khám phá vẻ đẹp hùng vĩ của Lệ Giang và Shangrila trong 5 ngày 4 đêm. Thưởng ngoạn cảnh quan thiên nhiên tại Khe Hổ Nhảy và Núi Tuyết Ngọc Long, tham quan các di sản văn hóa như Thành cổ DuKeZong và Tu viện Songzanlin. Trải nghiệm văn hóa độc đáo của người Naxi và Tạng, cùng với những khoảnh khắc đáng nhớ tại Công viên Hắc Long Đàm và Ngọc Thủy Trại. Cùng iVIVU khám phá ngay hôm nay!",
-        price: "10.000.000",
+        price: "25.000.000",
     },
     {
         id: 4,
@@ -55,7 +55,7 @@ const products = [
         time:"5 ngày 4 đêm",
         point:"8.5 Rất tốt",
         schedule:"26/06/2024",//lịch trình
-        name: "Tour Trung Quốc 5N4Đ: HCM - Lệ Giang - Đại Lý - Shangrila (Bay Thẳng VJ)",
+        name: "Tour Đà Nẵng 5N4Đ: HCM - Lệ Giang - Đại Lý - Shangrila (Bay Thẳng VJ)",
         image: "https://cdn2.ivivu.com/2024/06/06/10/nui-tuyet-ngoc-long-ivv-360x225.gif",
         location:"Tour Trung Quốc 5N4Đ: Lệ Giang - Shangrila (Bay Thẳng)",
         content:"Khám phá vẻ đẹp hùng vĩ của Lệ Giang và Shangrila trong 5 ngày 4 đêm. Thưởng ngoạn cảnh quan thiên nhiên tại Khe Hổ Nhảy và Núi Tuyết Ngọc Long, tham quan các di sản văn hóa như Thành cổ DuKeZong và Tu viện Songzanlin. Trải nghiệm văn hóa độc đáo của người Naxi và Tạng, cùng với những khoảnh khắc đáng nhớ tại Công viên Hắc Long Đàm và Ngọc Thủy Trại. Cùng iVIVU khám phá ngay hôm nay!",
