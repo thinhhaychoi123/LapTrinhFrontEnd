@@ -1,17 +1,17 @@
 // ---------------------------web.js---------------------------
+import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import ProductList from "../component/ProductList";
-import ProductDetail, { loadProduct } from "../component/ProductDetail";
-import Error from "../component/Error";
-import { News } from "../component/News";
-import React from "react";
+import Footer from "../WebPage/Footer";
+import ListTour from "../WebPage/ListTour";
 import Navbar from "../WebPage/Navbar";
 import Search from "../WebPage/Search";
-import Footer from "../WebPage/Footer";
 import Service from "../WebPage/Service";
-import ListTour from "../WebPage/ListTour";
-
+import User from "../WebPage/User";
+import Error from "../component/Error";
+import { News } from "../component/News";
+import ProductDetail, { loadProduct } from "../component/ProductDetail";
+import ProductList from "../component/ProductList";
 export const router = createBrowserRouter([
     {
         path: '/',
@@ -42,6 +42,10 @@ export const router = createBrowserRouter([
             {
                 path: 'list-tour',
                 element: <ListTour />
+            },
+            {
+                path: 'user',
+                element: <User />
             }
         ]
     },
