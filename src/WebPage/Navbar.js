@@ -1,13 +1,17 @@
 // ---------------------------Navbar.js---------------------------
 import React from 'react';
+import { useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import logo from '../Image/tour.png';
-import {useSelector} from "react-redux";
-import {Link} from "react-router-dom";
-import ListTour from "./ListTour";
 
 const Navbar = () => {
   const cart = useSelector(state => state.cart);
+  const username = localStorage.getItem('username');
+  const navigate = useNavigate();
 
+  const navigateToLoginPage = () => {
+    navigate('/user'); // điều hướng đến đường dẫn '/login'
+  };
 return(
     <div>
           <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -30,7 +34,9 @@ return(
               <a class="nav-link" href="#">Tour nước ngoài</a>
             </li>
           </ul>
-          
+          <span className="navbar-text me-3" style={{ cursor: 'pointer' }} onClick={navigateToLoginPage}>
+                <i className="bi bi-person fs-1"></i>
+              </span>
             <span class="navbar-text">
                 <i class="bi bi-bag fs-2">{cart.length}</i>
             </span>
