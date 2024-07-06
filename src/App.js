@@ -1,24 +1,20 @@
-// --------------------------------App.js----------------------------------------------
-import products from "./data/ProductData";
-import { useDispatch } from "react-redux";
-import { useEffect } from "react";
-import { loadProducts } from "./Store/Action";
-import { Outlet } from "react-router-dom";
+import { Routes, BrowserRouter, Route } from 'react-router-dom';
+import Home from "./WebPage/Home";
+import Header from './component/Header';
+import ProductDetail from "./component/ProductDetail";
 
 function App() {
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(loadProducts(products));
-    }, [dispatch]);
-
     return (
-        <div>
-            <Outlet />
-        </div>
+        <BrowserRouter>
+            <Header />
+            <div className="App">
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/product/:id" element={<ProductDetail />} />
+                </Routes>
+            </div>
+        </BrowserRouter>
     );
 }
 
 export default App;
-
-// --------------------------------------------------
