@@ -1,15 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { Provider } from "react-redux";
 import store from "./Store/Store";
-import { RouterProvider } from "react-router-dom";
-import { router } from "./Router/web";
+import App from './App';
 
-ReactDOM.render(
-    <React.StrictMode>
+const container = document.getElementById('root');
+
+if (container) {
+    const root = createRoot(container);
+        root.render(
         <Provider store={store}>
-            <RouterProvider router={router} />
+            <App />
         </Provider>
-    </React.StrictMode>,
-    document.getElementById('root')
-);
+    );
+} else {
+    console.error('ERROR');
+}

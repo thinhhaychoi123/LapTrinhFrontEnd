@@ -1,0 +1,279 @@
+{
+    "catagories": [
+        {
+            "id":1,
+            "name": "Trong nước"
+        },
+
+        {
+            "id":2,
+            "name": "Nước ngoài"
+        },
+
+        {
+            "id":3,
+            "name": "Tour hot"
+        }
+    ],
+
+    "area": [
+        {
+            "id":1,
+            "name": "Miền Bắc"
+        },
+        {
+            "id":2,
+            "name": "Miền Trung"
+        },
+        {
+            "id":3,
+            "name": "Miền Nam"
+        },
+        {
+            "id":4,
+            "name": "Châu Á"
+        },
+        {
+            "id":5,
+            "name": "Châu Âu"
+        },
+        {
+            "id":6,
+            "name": "Châu Phi"
+        },
+        {
+            "id":7,
+            "name": "Châu Mỹ"
+        },
+        {
+            "id":8,
+            "name": "Chúc Úc"
+        }
+    ],
+
+    "tour":[
+        {
+            "id":1,
+            "name":"Tour Bình Hưng 2N2Đ: Ninh Chữ - Vịnh Vĩnh Hy - Ngắm San Hô - BBQ Hải Sản",
+            "image": "https://cdn2.ivivu.com/2021/03/04/10/ivivu-vinh-hy-bia-360x225.gif",
+            "catagory_Id":1,
+            "area_Id":2,
+            "date":"2 ngày, 2 đêm",
+            "location_Start":"Thành phố Hồ Chí Minh",
+            "location_End":"Nha Trang",
+            "price_Adult":18900000,
+            "price_Childern":1417500,
+            "evaluate":"9.2 Tuyệt vời",
+            "start_day": "12/07/2024",
+            "description":{
+                "title": "Chạm tay đến Maldives Việt Nam",
+                "content": "Khám phá Bình Hưng, một viên ngọc ẩn giấu của Nha Trang với bãi biển trong xanh, hang đá nước ngọt độc đáo và san hô đẹp mắt. Thưởng thức hải sản tươi ngon, trong đó có tôm hùm trứ danh, và trải nghiệm cuộc sống đảo qua chương trình BBQ hải sản. Hành trình từ Ninh Chữ đến Vịnh Vĩnh Hy, ngắm san hô bằng tàu đáy kính và tham gia nhiều hoạt động vui vẻ khác. Cùng iVIVU khám phá ngay hôm nay!"
+
+            },
+            "detail":[
+        {
+            "id":1,
+            "name": "TỐI NGÀY 01: TP. HCM -  ĐẢO BÌNH HƯNG",
+            "route": [
+                {
+                    "time":"20h00: Xe và HDV đón khách tại điểm hẹn, Đoàn khởi hành đi Ninh Chữ - Vịnh Vĩnh Hy. Nghỉ đêm trên xe.",
+                    "description": "Điểm đón 1: Cây xăng số 14 (đối diện Bến xe Miền Tây ( có chỗ gửi xe)"
+                },
+                {
+                    "time": "",
+                    "description": "Điểm đón 2: Ngã 4 an sương, N4 Ga (không có chỗ gửi xe)"
+                },
+                {
+                    "time": "",
+                    "description": "Điểm đón 3: Trạm xăng dầu Nhơn Hoà, 520 Quốc lộ 13, Hiệp Bình Phước, Thủ Đức, cách bến xe miền đông 800m."
+                }
+            ]
+        },
+        {
+            "id":2,
+            "name":"NGÀY 01: VỊNH VĨNH HY - NGẮM SAN HÔ - BÌNH HƯNG (ĂN SÁNG, TRƯA, TỐI)",
+            "route":[
+                {
+                    "time": "Buổi sáng",
+                    "description": "07h00: Đoàn lên tàu đáy kính đi tham quan vịnh Vĩnh Hy - Ngắm nhìn rừng san hô và đời sống sinh vật biển phong phú qua đáy kính trong suốt. Ngoài ra, có cơ hội tắm tại bãi biển Bà Điên, với làn sóng nhẹ và nước biển trong xanh."
+                },
+                {
+                    "time": "Buổi chiều",
+                    "description": "10h00: Tàu đưa đoàn trở về đất liền. Tiếp tục đến với Đảo Bình Hưng, xe đưa quý khách qua cung đường ven biển mới tuyệt đẹp."
+                },
+                {
+                    "time":"Buổi tối",
+                    "description": "Tàu đưa quý khách về lại đảo, Quý khách vệ sinh cá nhân. Đoàn tham gia bữa tiệc hải sản Tôm Hùm trên bè. Thực đơn: Tôm hùm ½ con/người, Cá Giò hoặc cá Bò nướng cuốn bánh tráng + Rau sống, Ốc mặt trăng hấp, Mực nướng sate chấm tương xanh,  Sò nướng mỡ hành, Lẩu hải sản, Trà Đá." 
+                }
+            ]
+        },
+        {
+            "id":3,
+            "name": "NGÀY 2: ĐỒI CỪU - VƯỜN NHO - TP. HCM (ĂN SÁNG, TRƯA)",
+            "route":[
+                {
+                    "time": "Buổi sáng",
+                    "description": "08h30: Trả phòng tạm biệt đảo Bình Hưng, lên tàu về lại đất liền. Tham quan Đồi Cừu Suối Tiên là khu sinh thái mới, mang vẻ đẹp tự nhiên như nông trại cừu cổ tích châu Âu, với không gian xanh rộng lớn. (tự túc)"
+                },
+                {
+                    "time":"Buổi chiều",
+                    "description": "Đoàn dùng cơm trưa tại nhà hàng Cà Ná. Tiếp tục hành trình về TP.HCM, trên đường về xe dừng chân tham quan và mua sắm đặc sản của từng địa phương như: nho, tỏi, nước mắm,..."
+                },
+                {
+                    "time": "Buổi tối",
+                    "description":"19h00: Về đến TP.HCM xe đưa đoàn về điểm hẹn. Kết thúc tour đảo Bình Hưng."
+                }
+            ]
+        }
+    ]
+            
+        },
+
+        {
+            "id":2,
+            "name":"Tour Cao Bằng 3N2Đ: Hà Nội - Cao Bằng - Bắc Cạn - Thác Bản Giốc",
+            "image": "https://cdn2.ivivu.com/2022/07/08/15/ivivu-thac-ban-gioc-2-360x225.gif",
+            "catagory_Id":1,
+            "area_Id":1,
+            "date":"3 ngày, 2 đêm",
+            "location_Start":"Hà Nội",
+            "location_End":"Cao Bằng",
+            "price_Adult": 2365000,
+            "price_Childern":1773500,
+            "evaluate":"9.3 Tuyệt vời",
+            "start_day": "12/07/2024",
+            "description" : {
+                "title": "Tour Cao Bằng 3N2Đ: Hà Nội - Cao Bằng - Bắc Cạn - Thác Bản Giốc",
+                "content": "Hành trình 3 ngày 2 đêm đến Cao Bằng bao gồm thăm Hồ Ba Bể, khám phá làng Pắc Ngòi, chiêm ngưỡng Thác Bản Giốc, và tắm tại Suối Lê Nin. Mỗi điểm đến đều mang đặc trưng riêng, từ vẻ đẹp tự nhiên kỳ vĩ đến nét văn hóa đặc sắc của cộng đồng dân tộc tại đây​​. Cùng iVIVU khám phá ngay hôm nay!"
+            },
+            "detail":[
+                {
+                    "id":1,
+                    "name": "NGÀY 01: HÀ NỘI – SÔNG NĂNG - HỒ BA BỂ (ĂN TRƯA, TỐI)",
+                    "route":[
+                        {
+                            "time": "Buổi sáng",
+                            "description": "6h00: Xe và hướng dẫn viên đón khách tại Nhà Hát Lớn Hà Nội. Xe khởi hành đi Bắc Kạn. Đoàn dừng chân ăn sáng trên đường đi (chi phí tự túc), trên xe tham gia các trò chơi vui nhộn do hướng dẫn viên tổ chức.",
+                            "image": ""
+                        },
+                        {
+                            "time":"Buổi chiều",
+                            "description": "Chiều: Đoàn dừng chân dùng bữa trưa tại nhà hàng thị trấn Chợ Rã. Sau bữa trưa đoàn tiếp tục hành trình đi Ba Bể.",
+                            "image": "https://cdn2.ivivu.com/2022/10/18/11/ivivu-hoa-ba-be-4.gif"
+
+                        },
+                        {
+                            "time":"Buổi tối",
+                            "description":"Tối: Đoàn nhận phòng homestay nghỉ ngơi.Quý khách dùng bữa tối tại home stay với những món ăn độc đáo được chế biến theo phong cách truyền thống của người dân tộc Tày. Nghỉ đêm tại home stay Pắc Ngòi - Ba Bể.",
+                            "image": ""
+                        }
+                    ]
+                },
+                {
+                    "id":2,
+                    "name":"NGÀY 02: CAO BẰNG – THÁC BẢN GIỐC - ĐỘNG NGƯỜM NGAO (ĂN SÁNG, TRƯA, TỐI)",
+                    "route":[
+                        {
+                            "time":"Buổi sáng",
+                            "description": "Sáng: Sau bữa sáng, Xe và HDV đưa Quý khách khởi hành đi Trùng Khánh thăm thác Bản Giốc.",
+                            "image":""
+                        },
+                        {
+                            "time":"Buổi chiều",
+                            "description": "Đến Bản Giốc quý khách dùng bữa trưa tại nhà hàng với những món ăn đặc sắc của vùng miền, sau bữa trưa quý khách tiếp tục hành trình tham quan thác Bản Giốc có độ cao 53m, chia làm 3 tầng được coi là thác đẹp nhất Việt Nam và là thác lớn nhất Đông Nam Á. Thác cũng là nơi giáp ranh với nước bạn Trung Hoa với cột mốc chủ quyền thiêng liêng của Tổ Quốc.",
+                            "image" :"https://cdn2.ivivu.com/2016/08/31/14/ivivu-tour-mien-bac-4n3d-ho-ba-be-thac-ban-gioc-hang-pac-po-thac-ban-gioc.jpg"
+                        },
+                        
+                        {
+                            "time":"Buổi tối",
+                            "description": "Tối: Quý khách dùng bữa tối tại nhà hàng, tự do dạo chơi thưởng thức hạt dẻ, bánh trôi tàu,khám phá Tp. Cao Bằng về đêm. Nghỉ đêm tại khách sạn.",
+                            "image":""
+                        }
+                    ]
+                },
+                {
+                    "id":3,
+                    "name":"NGÀY 03: CAO BẰNG – SUỐI LÊ NIN – PĂC BÓ - HÀ NỘI (ĂN SÁNG, TRƯA)",
+                    "route":[
+                        {
+                            "time":"Buổi sáng",
+                            "description": "06h30: Đoàn thức giấc, làm thủ tục trả phòng khách sạn. Tham quan suối Lê Nin, hang Pắc Bó. Tại đây Quý khách vào thăm nơi ở và hoạt động của Chủ tịch Hồ Chí Minh trong những năm kháng chiến từ 1941 đến 1945, đoàn chụp hình lưu niệm tại Suối Lê Nin - Núi Các Mác, thăm hang Cốc Bó và chụp hình lưu niệm tại Cột mốc số 0 đường Hồ Chí Minh.",
+                            "image":"https://cdn2.ivivu.com/2020/05/26/16/ivivu-suoi-le-nin.gif"
+                        },
+                        {
+                            "time":"Buổi chiều",
+                            "description":"Quý khách dùng bữa trưa tại nhà hàng ở Cao Bằng. Đoàn lên xe trở về Hà Nội",
+                            "image":""
+                        },
+                        {
+                            "time":"Buổi tối",
+                            "description": "Tối: Về đến Hà Nội kết thúc chương trình",
+                            "image": ""
+                        }
+                    ]
+                }
+            ]
+
+        },
+
+        {
+            "id":3,
+            "name":"Trải Nghiệm Du Lịch Singapore - Kuala Lumpur - Singapore 3N2Đ Cùng Siêu Du Thuyền Genting Dream 5*",
+            "image": "https://cdn2.ivivu.com/2023/04/11/10/ivivu-dream-cruise-360x225.gif",
+            "catagory_Id":2,
+            "area_Id":4,
+            "date":"3 ngày, 2 đêm",
+            "location_Start":"SINGAPORE",
+            "location_End":"Malaysia",
+            "price_Adult": 11560000,
+            "price_Childern": 10404000,
+            "evaluate":"9.2 Tuyệt vời",
+            "start_day": "07/07/2024",
+            "description": {
+                "title": "Siêu phẩm giải trí, nghỉ dưỡng trên đại dương",
+                "content": "Thưởng thức chuyến du lịch 3 ngày 2 đêm trên siêu du thuyền Genting Dream 5 sao, khám phá Singapore và Kuala Lumpur. Từ không gian hiện đại của Singapore, hành trình sẽ đưa bạn đến với Kuala Lumpur, thủ đô sầm uất của Malaysia, nổi tiếng với các tòa nhà chọc trời như Tháp Đôi Petronas và nền ẩm thực đa dạng. Trên tàu, quý khách sẽ tận hưởng các tiện ích sang trọng, ẩm thực tuyệt vời và hoạt động giải trí đỉnh cao. Cùng iVIVU khám phá ngay hôm nay!"
+            },
+            "detail":[
+                {
+                    "id":1,
+                    "name": "NGÀY 1: SINGAPORE - DU THUYỀN GENTING DREAM (ĂN TỐI)",
+                    "route":[
+                        {
+                            "time": "",
+                            "description": "Quý khách vui lòng có mặt tại cảng Marina Bay Cruise Center ít nhất 2 tiếng trước giờ khởi hành để làm thủ tục lên du thuyền, sau đó có thể thưởng thức bữa tối và tham gia các hoạt động giải trí trên tàu.",
+                            "image": "https://cdn2.ivivu.com/2023/04/11/10/ivivu-interior2.gif"
+                        }
+                        
+                    ]
+                },
+                {
+                    "id":2,
+                    "name":"NGÀY 2: CẬP CẢNG KLANG, MALAYSIA VÀ TỰ DO KHÁM PHÁ KUALA LUMPUR. (ĂN SÁNG, TRƯA, TỐI)",
+                    "route": [
+                        {
+                            "time":"",
+                            "description": "Tàu cập bến cảng Klang, Malaysia vào buổi sáng. Quý khách có thể lựa chọn thư giãn trên du thuyền hoặc khám phá Kuala Lumpur, cách đó 1 giờ lái xe. Thành phố này nổi tiếng với những tòa nhà chọc trời và kiến trúc lịch sử, đặc biệt là Tháp Đôi Petronas - biểu tượng của kiến trúc hiện đại pha lẫn nét truyền thống Hồi giáo.",
+                            "image": "https://cdn2.ivivu.com/2018/08/16/10/ivivu-thap-doi-twin-tower-petronas.jpg"
+                        }
+                    ]
+                },
+                {
+                    "id":3,
+                    "name": "NGÀY 3: ĂN SÁNG TRÊN DU THUYỀN VÀ TRỞ VỀ SINGAPORE.",
+                    "route":[
+                        {
+                            "time":"",
+                            "description": "Du Thuyền cập cảng Singapore. Quý khách có thể ăn sáng và thư giãn trước khi rời Du Thuyền.",
+                            "image": "https://cdn2.ivivu.com/2023/04/17/17/ivivu-bar-city.gif"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+    
+
+
+
+    
+}
