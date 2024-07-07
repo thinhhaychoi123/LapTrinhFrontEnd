@@ -56,6 +56,7 @@
             "id":1,
             "name":"Tour Bình Hưng 2N2Đ: Ninh Chữ - Vịnh Vĩnh Hy - Ngắm San Hô - BBQ Hải Sản",
             "image": "https://cdn2.ivivu.com/2021/03/04/10/ivivu-vinh-hy-bia-360x225.gif",
+            "image_introduce": "https://cdn2.ivivu.com/2021/03/04/10/ivivu-vinh-hy-bia-750x420.gif",
             "catagory_Id":1,
             "area_Id":2,
             "date":"2 ngày, 2 đêm",
@@ -77,15 +78,18 @@
             "route": [
                 {
                     "time":"20h00: Xe và HDV đón khách tại điểm hẹn, Đoàn khởi hành đi Ninh Chữ - Vịnh Vĩnh Hy. Nghỉ đêm trên xe.",
-                    "description": "Điểm đón 1: Cây xăng số 14 (đối diện Bến xe Miền Tây ( có chỗ gửi xe)"
+                    "description": "Điểm đón 1: Cây xăng số 14 (đối diện Bến xe Miền Tây ( có chỗ gửi xe)",
+                    "image": ""
                 },
                 {
                     "time": "",
-                    "description": "Điểm đón 2: Ngã 4 an sương, N4 Ga (không có chỗ gửi xe)"
+                    "description": "Điểm đón 2: Ngã 4 an sương, N4 Ga (không có chỗ gửi xe)",
+                    "image": ""
                 },
                 {
                     "time": "",
-                    "description": "Điểm đón 3: Trạm xăng dầu Nhơn Hoà, 520 Quốc lộ 13, Hiệp Bình Phước, Thủ Đức, cách bến xe miền đông 800m."
+                    "description": "Điểm đón 3: Trạm xăng dầu Nhơn Hoà, 520 Quốc lộ 13, Hiệp Bình Phước, Thủ Đức, cách bến xe miền đông 800m.",
+                    "image": ""
                 }
             ]
         },
@@ -95,15 +99,18 @@
             "route":[
                 {
                     "time": "Buổi sáng",
-                    "description": "07h00: Đoàn lên tàu đáy kính đi tham quan vịnh Vĩnh Hy - Ngắm nhìn rừng san hô và đời sống sinh vật biển phong phú qua đáy kính trong suốt. Ngoài ra, có cơ hội tắm tại bãi biển Bà Điên, với làn sóng nhẹ và nước biển trong xanh."
+                    "description": "07h00: Đoàn lên tàu đáy kính đi tham quan vịnh Vĩnh Hy - Ngắm nhìn rừng san hô và đời sống sinh vật biển phong phú qua đáy kính trong suốt. Ngoài ra, có cơ hội tắm tại bãi biển Bà Điên, với làn sóng nhẹ và nước biển trong xanh.",
+                    "image": "https://cdn2.ivivu.com/2019/03/05/17/ivivu-vinh-vinh-hy.jpg"
                 },
                 {
                     "time": "Buổi chiều",
-                    "description": "10h00: Tàu đưa đoàn trở về đất liền. Tiếp tục đến với Đảo Bình Hưng, xe đưa quý khách qua cung đường ven biển mới tuyệt đẹp."
+                    "description": "10h00: Tàu đưa đoàn trở về đất liền. Tiếp tục đến với Đảo Bình Hưng, xe đưa quý khách qua cung đường ven biển mới tuyệt đẹp.",
+                    "image": "https://cdn2.ivivu.com/2023/06/08/16/ivivu-binh-hung-bia.jpg"
                 },
                 {
                     "time":"Buổi tối",
-                    "description": "Tàu đưa quý khách về lại đảo, Quý khách vệ sinh cá nhân. Đoàn tham gia bữa tiệc hải sản Tôm Hùm trên bè. Thực đơn: Tôm hùm ½ con/người, Cá Giò hoặc cá Bò nướng cuốn bánh tráng + Rau sống, Ốc mặt trăng hấp, Mực nướng sate chấm tương xanh,  Sò nướng mỡ hành, Lẩu hải sản, Trà Đá." 
+                    "description": "Tàu đưa quý khách về lại đảo, Quý khách vệ sinh cá nhân. Đoàn tham gia bữa tiệc hải sản Tôm Hùm trên bè. Thực đơn: Tôm hùm ½ con/người, Cá Giò hoặc cá Bò nướng cuốn bánh tráng + Rau sống, Ốc mặt trăng hấp, Mực nướng sate chấm tương xanh,  Sò nướng mỡ hành, Lẩu hải sản, Trà Đá." ,
+                    "image": "https://cdn2.ivivu.com/2016/09/05/10/ivivu-binh-ba-2n2d-kham-pha-dao-tom-hum-tom-hum1.jpg"
                 }
             ]
         },
@@ -113,15 +120,18 @@
             "route":[
                 {
                     "time": "Buổi sáng",
-                    "description": "08h30: Trả phòng tạm biệt đảo Bình Hưng, lên tàu về lại đất liền. Tham quan Đồi Cừu Suối Tiên là khu sinh thái mới, mang vẻ đẹp tự nhiên như nông trại cừu cổ tích châu Âu, với không gian xanh rộng lớn. (tự túc)"
+                    "description": "08h30: Trả phòng tạm biệt đảo Bình Hưng, lên tàu về lại đất liền. Tham quan Đồi Cừu Suối Tiên là khu sinh thái mới, mang vẻ đẹp tự nhiên như nông trại cừu cổ tích châu Âu, với không gian xanh rộng lớn. (tự túc)",
+                    "image": "https://cdn2.ivivu.com/2023/04/25/15/ivivu-bai-trung-binh-hung-.jpg"
                 },
                 {
                     "time":"Buổi chiều",
-                    "description": "Đoàn dùng cơm trưa tại nhà hàng Cà Ná. Tiếp tục hành trình về TP.HCM, trên đường về xe dừng chân tham quan và mua sắm đặc sản của từng địa phương như: nho, tỏi, nước mắm,..."
+                    "description": "Đoàn dùng cơm trưa tại nhà hàng Cà Ná. Tiếp tục hành trình về TP.HCM, trên đường về xe dừng chân tham quan và mua sắm đặc sản của từng địa phương như: nho, tỏi, nước mắm,...",
+                    "image": "https://cdn2.ivivu.com/2019/12/11/14/ivivu-vuon-nho-ninh-thuan.gif"
                 },
                 {
                     "time": "Buổi tối",
-                    "description":"19h00: Về đến TP.HCM xe đưa đoàn về điểm hẹn. Kết thúc tour đảo Bình Hưng."
+                    "description":"19h00: Về đến TP.HCM xe đưa đoàn về điểm hẹn. Kết thúc tour đảo Bình Hưng.",
+                    "image": ""
                 }
             ]
         }
@@ -133,6 +143,7 @@
             "id":2,
             "name":"Tour Cao Bằng 3N2Đ: Hà Nội - Cao Bằng - Bắc Cạn - Thác Bản Giốc",
             "image": "https://cdn2.ivivu.com/2022/07/08/15/ivivu-thac-ban-gioc-2-360x225.gif",
+            "image_introduce":"https://cdn2.ivivu.com/2016/10/06/16/ho-ba-be-cung-co-mua-buom-bay-5-750x420.jpg",
             "catagory_Id":1,
             "area_Id":1,
             "date":"3 ngày, 2 đêm",
@@ -220,6 +231,7 @@
             "id":3,
             "name":"Trải Nghiệm Du Lịch Singapore - Kuala Lumpur - Singapore 3N2Đ Cùng Siêu Du Thuyền Genting Dream 5*",
             "image": "https://cdn2.ivivu.com/2023/04/11/10/ivivu-dream-cruise-360x225.gif",
+            "image_introduce": "https://cdn2.ivivu.com/2023/04/11/10/ivivu-cruise-750x420.gif",
             "catagory_Id":2,
             "area_Id":4,
             "date":"3 ngày, 2 đêm",
