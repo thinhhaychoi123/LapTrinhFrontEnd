@@ -26,6 +26,10 @@ const Header = () => {
                             <a className="nav-link" href="/list">Tour trong nước</a>
                             <a className="nav-link" href="/">Pricing</a>
                             <a className="nav-link disabled">Disabled</a>
+                            {/* cart */}
+                            <span class="navbar-text">
+                            <i class="bi bi-cart2"></i>
+                            </span>
                         </div>
                     </div>
                 </div>
