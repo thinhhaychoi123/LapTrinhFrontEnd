@@ -1,7 +1,11 @@
+// -----------------------Header.js-----------------------
 import React from "react";
-import tour from "../Image/tour.png"
+import { useSelector } from 'react-redux';
+import tour from "../Image/tour.png";
 
 const Header = () => {
+    const cart = useSelector(state => state.cart);
+
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-light bg-body-tertiary">
@@ -24,11 +28,10 @@ const Header = () => {
                         <div className="navbar-nav">
                             <a className="nav-link active" aria-current="page" href="/">Home</a>
                             <a className="nav-link" href="/list">Tour trong nước</a>
-                            <a className="nav-link" href="/">Pricing</a>
-                            <a className="nav-link disabled">Disabled</a>
+                            
                             {/* cart */}
-                            <span class="navbar-text">
-                            <i class="bi bi-cart2"></i>
+                            <span className="navbar-text">
+                                <i className="bi bi-cart2"></i> {cart.length}
                             </span>
                         </div>
                     </div>

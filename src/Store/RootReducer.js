@@ -1,45 +1,48 @@
 // -----------------------RootReducer.js-----------------------
-import { createReducer } from '@reduxjs/toolkit';
+import { combineReducers } from '@reduxjs/toolkit';
 
-const initState = {
-    products: [],
-    cart: checkCart(),
+const initialProductsState = [];
+const initialCartState = checkCart();
+
+const productsReducer = (state = initialProductsState, action) => {
+    switch (action.type) {
+        case 'product.load':
+            return action.payload.products;
+        case 'cart.add':
+            return state.map(p => 
+                p.id === action.payload.product.id 
+                    ? { ...p, isBuying: true, color: 'green' } 
+                    : p
+            );
+        case 'cart.remove':
+            return state.map(p => 
+                p.id === action.payload.product.id 
+                    ? { ...p, isBuying: false, color: '' } 
+                    : p
+            );
+        default:
+            return state;
+    }
 };
 
-export const root = createReducer(initState, (builder) => {
-    builder
-        .addCase('product.load', (state, action) => {
-            state.products = action.payload.products;
-        })
-        .addCase('cart.add', (state, action) => {
-            const productToAdd = action.payload.product;
-            state.cart.push(productToAdd);
+const cartReducer = (state = initialCartState, action) => {
+    switch (action.type) {
+        case 'cart.add':
+            const newCart = [...state, action.payload.product];
+            saveCart(newCart);
+            return newCart;
+        case 'cart.remove':
+            const updatedCart = state.filter(p => p.id !== action.payload.product.id);
+            saveCart(updatedCart);
+            return updatedCart;
+        default:
+            return state;
+    }
+};
 
-            // Cập nhật trạng thái của sản phẩm trong danh sách sản phẩm
-            state.products = state.products.map(p => {
-                if (p.id === productToAdd.id) {
-                    return { ...p, isBuying: true, color: 'red' };
-                }
-                return p;
-            });
-
-            saveCart(state.cart);
-        })
-        .addCase('cart.minus', (state, action) => {
-            const productToRemove = action.payload.product;
-            state.cart = state.cart.filter(p => p.id !== productToRemove.id);
-
-            // Cập nhật trạng thái của sản phẩm trong danh sách sản phẩm
-            state.products = state.products.map(p => {
-                if (p.id === productToRemove.id) {
-                    return { ...p, isBuying: false, color: 'blue' };
-                }
-                return p;
-            });
-
-            saveCart(state.cart);
-        })
-    
+const rootReducer = combineReducers({
+    products: productsReducer,
+    cart: cartReducer,
 });
 
 function checkCart() {
@@ -51,5 +54,4 @@ function saveCart(cart) {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-
-// ----------------------------------------
+export default rootReducer;
