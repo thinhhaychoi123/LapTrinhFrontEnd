@@ -1,9 +1,15 @@
+// -----------------------Home.js-----------------------
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import Search from "../component/Search";
+import Service from "./Service";
 
 const Home = () => {
     const [tours, setTours] = useState([]);
+    const dispatch = useDispatch();
+    const cart = useSelector(state => state.cart);
 
     useEffect(() => {
         // Gọi API từ JSON Server
@@ -19,8 +25,20 @@ const Home = () => {
         fetchTours();
     }, []);
 
+    const handleAddToCart = (tour) => {
+        dispatch({ type: 'cart.add', payload: { product: tour } });
+    };
+
+    const handleRemoveFromCart = (tour) => {
+        dispatch({ type: 'cart.remove', payload: { product: tour } });
+    };
+
     return (
-        <div className="container">
+        
+        <div>
+        <Search />
+        <Service />
+            <div className="container">
             <div className="row row-cols-1 row-cols-md-3 g-4">
                 {tours.map(tour => (
                     <div className="col" key={tour.id}>
@@ -36,13 +54,32 @@ const Home = () => {
                                 </div>
                             </Link>
                             <div className="card-footer">
-                                <button type="button" className="btn btn-warning">Thêm vào giỏ hàng</button>
+                                {cart.find(item => item.id === tour.id) ? (
+                                    <button
+                                        type="button"
+                                        className="btn btn-danger"
+                                        onClick={() => handleRemoveFromCart(tour)}
+                                    >
+                                        Xóa sản phẩm
+                                    </button>
+                                ) : (
+                                    <button
+                                        type="button"
+                                        className="btn btn-warning"
+                                        onClick={() => handleAddToCart(tour)}
+                                    >
+                                        Thêm vào giỏ hàng
+                                    </button>
+                                )}
                             </div>
                         </div>
                     </div>
                 ))}
             </div>
         </div>
+
+        </div>
+        
     );
 };
 

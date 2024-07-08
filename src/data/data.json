@@ -50,7 +50,7 @@
             "name": "Chúc Úc"
         }
     ],
-
+    
     "tour":[
         {
             "id":1,
@@ -65,7 +65,7 @@
             "price_Adult":18900000,
             "price_Childern":1417500,
             "evaluate":"9.2 Tuyệt vời",
-            "start_day": "12/07/2024",
+            "start_day": "2024-07-12",
             "description":{
                 "title": "Chạm tay đến Maldives Việt Nam",
                 "content": "Khám phá Bình Hưng, một viên ngọc ẩn giấu của Nha Trang với bãi biển trong xanh, hang đá nước ngọt độc đáo và san hô đẹp mắt. Thưởng thức hải sản tươi ngon, trong đó có tôm hùm trứ danh, và trải nghiệm cuộc sống đảo qua chương trình BBQ hải sản. Hành trình từ Ninh Chữ đến Vịnh Vĩnh Hy, ngắm san hô bằng tàu đáy kính và tham gia nhiều hoạt động vui vẻ khác. Cùng iVIVU khám phá ngay hôm nay!"
@@ -152,7 +152,7 @@
             "price_Adult": 2365000,
             "price_Childern":1773500,
             "evaluate":"9.3 Tuyệt vời",
-            "start_day": "12/07/2024",
+            "start_day": "2024-07-12",
             "description" : {
                 "title": "Tour Cao Bằng 3N2Đ: Hà Nội - Cao Bằng - Bắc Cạn - Thác Bản Giốc",
                 "content": "Hành trình 3 ngày 2 đêm đến Cao Bằng bao gồm thăm Hồ Ba Bể, khám phá làng Pắc Ngòi, chiêm ngưỡng Thác Bản Giốc, và tắm tại Suối Lê Nin. Mỗi điểm đến đều mang đặc trưng riêng, từ vẻ đẹp tự nhiên kỳ vĩ đến nét văn hóa đặc sắc của cộng đồng dân tộc tại đây​​. Cùng iVIVU khám phá ngay hôm nay!"
@@ -235,12 +235,12 @@
             "catagory_Id":2,
             "area_Id":4,
             "date":"3 ngày, 2 đêm",
-            "location_Start":"SINGAPORE",
+            "location_Start":"Singapore",
             "location_End":"Malaysia",
             "price_Adult": 11560000,
             "price_Childern": 10404000,
             "evaluate":"9.2 Tuyệt vời",
-            "start_day": "07/07/2024",
+            "start_day": "2024-07-07",
             "description": {
                 "title": "Siêu phẩm giải trí, nghỉ dưỡng trên đại dương",
                 "content": "Thưởng thức chuyến du lịch 3 ngày 2 đêm trên siêu du thuyền Genting Dream 5 sao, khám phá Singapore và Kuala Lumpur. Từ không gian hiện đại của Singapore, hành trình sẽ đưa bạn đến với Kuala Lumpur, thủ đô sầm uất của Malaysia, nổi tiếng với các tòa nhà chọc trời như Tháp Đôi Petronas và nền ẩm thực đa dạng. Trên tàu, quý khách sẽ tận hưởng các tiện ích sang trọng, ẩm thực tuyệt vời và hoạt động giải trí đỉnh cao. Cùng iVIVU khám phá ngay hôm nay!"
