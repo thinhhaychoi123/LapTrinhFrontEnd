@@ -5,14 +5,20 @@ import axios from 'axios';
 const ProductDetail = () => {
     const { id } = useParams();
     const [tour, setTour] = useState(null);
+    
 
     useEffect(() => {
         const fetchTour = async () => {
             try {
                 const response = await axios.get(`http://localhost:3001/tour/${id}`);
                 setTour(response.data);
+                // Lưu lịch sử xem sản phẩm vào local storage
+                const history = JSON.parse(localStorage.getItem("viewHistory")) || [];
+                const newHistory = history.filter(item => item.id !== response.data.id); // Remove duplicate
+                newHistory.unshift(response.data); // Add new view to the beginning
+                localStorage.setItem("viewHistory", JSON.stringify(newHistory.slice(0, 10))); // Keep only latest 10
             } catch (error) {
-                console.error('Lỗi khi lấy dữ liệu từ API:', error);
+                console.error('Error fetching product:', error);
             }
         };
 

@@ -15,14 +15,8 @@ const Search = () => {
     };
 
     return (
-        <div className="row mt-2 mb-4 position-relative" style={{
-            height: '400px',
-            backgroundImage: `url(${background})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            clipPath: 'polygon(0 0, 100% 0, 85% 100%, 0% 100%)'
-        }}>
-            <div className="col-md-6 offset-md-1 position-absolute top-50 start-0 translate-middle-y">
+        
+            <div className="col-md-6 offset-md-1">
                 <form className="row g-3 align-items-center" onSubmit={handleSearch}>
                     <div className="col-md-12">
                         <label htmlFor="location" className="form-label">Địa điểm:</label>
@@ -32,7 +26,9 @@ const Search = () => {
                             <option value="Cao Bằng">Cao Bằng</option>
                             <option value="Malaysia">Malaysia</option>
                             <option value="Trung Quốc">Trung Quốc</option>
-                            <option value="Thái Lan">Thái Lan</option>
+                            <option value="Châu Âu">Châu Âu</option>
+                            <option value="Nhật Bản">Nhật Bản</option>
+                            <option value="Hàn Quốc">Hàn Quốc</option>
                             {/* Thêm các tùy chọn địa điểm khác */}
                         </select>
                     </div>
@@ -46,8 +42,8 @@ const Search = () => {
                                 <label htmlFor="start" className="form-label">Bắt đầu đi từ:</label>
                                 <select className="form-select" id="start" value={start} onChange={(e) => setStart(e.target.value)}>
                                     <option value="">Bắt đầu đi từ</option>
-                                    <option value="Hà Nội">Thành phố Hồ Chí Minh</option>
-                                    <option value="Đà Nẵng">Hà Nội</option>
+                                    <option value="Thành phố Hồ Chí Minh">Thành phố Hồ Chí Minh</option>
+                                    <option value="Hà Nội">Hà Nội</option>
                                     <option value="Singapore">Singapore</option>
                                     <option value="Trung Quốc">Trung Quốc</option>
                                     <option value="Thái Lan">Thái Lan</option>
@@ -59,8 +55,7 @@ const Search = () => {
                     <div className="col-md-6 mt-3">
                         <button type="submit" className="btn btn-warning w-100">Tìm</button>
                     </div>
-                </form>
-            </div>
+            </form>
         </div>
     );
 };
