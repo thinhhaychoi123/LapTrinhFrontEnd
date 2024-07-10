@@ -1,13 +1,13 @@
 // -----------------------Header.js-----------------------
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from 'react-redux';
 import tour from "../Image/tour.png";
 
-const Header = () => {
+const Header = ({ isDarkMode, toggleDarkMode }) => {
     const cart = useSelector(state => state.cart);
 
     return (
-        <>
+        <div className={isDarkMode ? 'dark-mode' : ''}>
             <nav className="navbar navbar-expand-lg navbar-light bg-body-tertiary">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="/">
@@ -28,17 +28,19 @@ const Header = () => {
                         <div className="navbar-nav">
                             <a className="nav-link active" aria-current="page" href="/">Home</a>
                             <a className="nav-link" href="/list">Tour trong nước</a>
-                            
-                            {/* cart */}
                             <span className="navbar-text">
                                 <i className="bi bi-cart2"></i> {cart.length}
                             </span>
+                            <button onClick={toggleDarkMode} className="btn btn-dark-mode-toggle">
+                                {isDarkMode ? 'Light Mode' : 'Dark Mode'}
+                            </button>
                         </div>
                     </div>
                 </div>
             </nav>
-        </>
+        </div>
     );
-}
+};
 
 export default Header;
+

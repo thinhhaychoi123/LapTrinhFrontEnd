@@ -1,15 +1,26 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import Search from "./Search";
+import { Link } from "react-router-dom";
+import "../css/style.css"
 
 const ListProduct = () => {
     const [tours, setTours] = useState([]);
     const [locationEnd, setLocationEnd] = useState('');
     const [sortBy, setSortBy] = useState(null);
+    const [filters, setFilters] = useState({
+        location: '',
+        start: '',
+        startDate: ''
+    });
+    const [searchTerm, setSearchTerm] = useState('');
+
     const dispatch = useDispatch();
     const cart = useSelector(state => state.cart);
     const location = useLocation();
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchTours = async () => {
@@ -24,6 +35,15 @@ const ListProduct = () => {
         fetchTours();
     }, []);
 
+    useEffect(() => {
+        const params = new URLSearchParams(location.search);
+        setFilters({
+            location: params.get('location') || '',
+            start: params.get('start') || '',
+            startDate: params.get('startDate') || ''
+        });
+    }, [location.search]);
+
     const handleAddToCart = (tour) => {
         dispatch({ type: 'cart.add', payload: { product: tour } });
     };
@@ -33,7 +53,8 @@ const ListProduct = () => {
     };
 
     const handleFilterLocationEnd = (location) => {
-        setLocationEnd(location);
+        setFilters({ ...filters, location: location });
+        navigate(`/list?location=${location}&start=${filters.start}&startDate=${filters.startDate}&search=${searchTerm}`);
     };
 
     const sortTours = (filteredTours) => {
@@ -52,33 +73,41 @@ const ListProduct = () => {
     };
 
     const getFilteredTours = () => {
-        const params = new URLSearchParams(location.search);
-        const locationValue = params.get('location') || '';
-        const startValue = params.get('start') || '';
-        const startDateValue = params.get('startDate') || '';
+        const { location, start, startDate } = filters;
 
         return tours.filter(tour => {
-            const matchLocation = locationValue ? tour.location_End.includes(locationValue) : true;
-            const matchStart = startValue ? tour.location_Start.includes(startValue) : true;
-            const matchStartDate = startDateValue ? tour.start_day === startDateValue : true;
+            const matchLocation = location ? tour.location_End.includes(location) : true;
+            const matchStart = start ? tour.location_Start.includes(start) : true;
+            const matchStartDate = startDate ? tour.start_day === startDate : true;
             const matchLocationEnd = locationEnd ? tour.location_End.includes(locationEnd) : true;
+            const matchSearch = searchTerm ? (
+                tour.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                tour.description.toLowerCase().includes(searchTerm.toLowerCase())
+            ) : true;
 
-            return matchLocation && matchStart && matchStartDate && matchLocationEnd;
+            return matchLocation && matchStart && matchStartDate && matchLocationEnd && matchSearch;
         });
     };
 
     const filteredTours = getFilteredTours();
     const sortedTours = sortTours(filteredTours);
 
+    const handleSearch = (e) => {
+        e.preventDefault();
+        // Redirect to ListProduct with search params
+        navigate(`/list?location=${filters.location}&start=${filters.start}&startDate=${filters.startDate}&search=${searchTerm}`);
+    };
+
     return (
-        <div className="container my-4">
+        <div>
+            <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} handleSearch={handleSearch} filters={filters} />
+            <div className="container my-4">
             <h2 className="mb-4">Tour du lịch Úc từ Hồ Chí Minh</h2>
             <p>Khám phá Úc với iVIVU: Sydney năng động, Melbourne sành điệu, Uluru huyền bí. Hành trình khám phá văn hóa và thiên nhiên kỳ vĩ. Đặt tour ngay!</p>
-
             <div className="row mb-3">
-                <div className="col-md-3">
+                <div className="col-md-3 border">
                     <ul className="list-unstyled">
-                        <li><strong>Tour HOT Nước Ngoài</strong></li>
+                        <li><strong className="fs-5">Tour HOT Nước Ngoài</strong></li>
                         <li><a href="#" onClick={() => handleFilterLocationEnd('Trung Quốc')}>Trung Quốc</a></li>
                         <li><a href="#" onClick={() => handleFilterLocationEnd('Thái Lan')}>Thái Lan</a></li>
                         <li><a href="#" onClick={() => handleFilterLocationEnd('Singapore')}>Singapore</a></li>
@@ -91,7 +120,7 @@ const ListProduct = () => {
                     </ul>
 
                     <ul className="list-unstyled">
-                        <li><strong>Tour HOT Trong Nước</strong></li>
+                        <li><strong className="fs-5">Tour HOT Trong Nước</strong></li>
                         <li><a href="#" onClick={() => handleFilterLocationEnd('Hạ Long')}>Hạ Long</a></li>
                         <li><a href="#" onClick={() => handleFilterLocationEnd('Nha Trang')}>Nha Trang</a></li>
                         <li><a href="#" onClick={() => handleFilterLocationEnd('Đà Nẵng')}>Đà Nẵng</a></li>
@@ -106,15 +135,20 @@ const ListProduct = () => {
                 </div>
                 <div className="col-md-9">
                     <div className="d-flex justify-content-between align-items-center mb-3">
+                    <div>
+                            <p className="text-muted mb-0">Sắp xếp theo:</p>
+                        </div>
                         <div>
                             <button className="btn btn-outline-primary me-2" onClick={() => setSortBy('recommend')}>iVIVU Đề xuất</button>
-                            <button className="btn btn-outline-secondary me-2" onClick={() => setSortBy('duration')}>Thời lượng tour</button>
-                            <button className="btn btn-outline-secondary me-2" onClick={() => setSortBy('start_date')}>Ngày khởi hành</button>
-                            <button className="btn btn-outline-secondary" onClick={() => setSortBy('price')}>Giá tour</button>
+                            <button className="btn btn-outline-secondary me-2" onClick={() => setSortBy('duration')}>Thời gian</button>
+                            <button className="btn btn-outline-info me-2" onClick={() => setSortBy('start_date')}>Ngày khởi hành</button>
+                            <button className="btn btn-outline-dark me-2" onClick={() => setSortBy('price')}>Giá</button>
                         </div>
+                        
                     </div>
+
                     {sortedTours.map(tour => (
-                        <div key={tour.id} className="card mb-3" style={{ maxWidth: '800px' }}>
+                        <div key={tour.id} className="card mb-3 hsshadow" style={{ maxWidth: '800px' }}>
                             <div className="row g-0">
                                 <div className="col-md-4 d-flex">
                                     <img src={tour.image} className="img-fluid rounded-start" alt={tour.name} />
@@ -125,12 +159,10 @@ const ListProduct = () => {
                                         <p className="card-text">{tour.date} | {tour.start_day}</p>
                                         <div className="d-flex justify-content-between">
                                             <p className="card-text text-success">{tour.evaluate}</p>
-                                            <p className="card-text text-warning fs-3">{tour.price_Adult.toLocaleString()} VNĐ</p>
+                                            <p className="card-text text-warning fs-5">{tour.price_Adult} VNĐ</p>
                                         </div>
-
-                                        <div className="d-flex justify-content-end">
-                                            <div className="me-2">
-                                                {cart.find(item => item.id === tour.id) ? (
+                                        <div>
+                                        {cart.find(item => item.id === tour.id) ? (
                                                     <button
                                                         type="button"
                                                         className="btn btn-danger"
@@ -147,9 +179,9 @@ const ListProduct = () => {
                                                         Thêm vào giỏ hàng
                                                     </button>
                                                 )}
-                                            </div>
-                                            <Link to={`/product/${tour.id}`} className="btn btn-primary">Chi tiết</Link>
                                         </div>
+                                        <Link to={`/product/${tour.id}`} className="btn btn-primary">Chi tiết</Link>
+
                                     </div>
                                 </div>
                             </div>
@@ -158,7 +190,9 @@ const ListProduct = () => {
                 </div>
             </div>
         </div>
+        </div>
+        
     );
-}
+};
 
 export default ListProduct;
