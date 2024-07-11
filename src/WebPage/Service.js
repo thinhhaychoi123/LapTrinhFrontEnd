@@ -1,22 +1,46 @@
 import React from "react";
+
 const Service = () => {
-return(
-    <div class="container mt-4">
-    <div class="row text-center">
-        <div class="col-md-4">
-            <h5>Lựa Chọn Không Giới Hạn</h5>
-            <p>Vô vàn hành trình, triệu cảm hứng</p>
+
+    return(
+        <div>
+            <div className="d-flex justify-content-evenly m-5">
+                <div className="d-flex">
+                    <div>
+                        <img src="https://www.ivivu.com/du-lich/content/img/icon-location.svg" />
+                    </div>
+
+                    <div>
+                        <span>Lựa chọn không giới hạn </span><br/>
+                        Vô vàn hành trình, triệu cảm hứng
+                    </div>
+                </div>
+
+                <div className="d-flex">
+                    <div>
+                        <img src="https://www.ivivu.com/du-lich/content/img/icon-support.svg" />
+                    </div>
+
+                    <div>
+                        <span>Dịch vụ cá nhân hoá </span><br/>
+                        Chăm sóc đặc biệt, trải nghiệm độc đáo
+                    </div>
+                </div>
+
+                <div className="d-flex">
+                    <div>
+                        <img src="https://www.ivivu.com/du-lich/content/img/icon-payment.svg" />
+                    </div>
+
+                    <div>
+                        <span>Giá Trị Vượt Trội </span><br/>
+                        Chăm sóc đặc biệt, trải nghiệm độc đáo
+                    </div>
+                </div>
+
+            </div>
         </div>
-        <div class="col-md-4">
-            <h5>Dịch Vụ Cá Nhân Hóa</h5>
-            <p>Chăm sóc đặc biệt, trải nghiệm độc đáo</p>
-        </div>
-        <div class="col-md-4">
-            <h5>Giá Trị Vượt Trội</h5>
-            <p>Chất lượng đỉnh, đảm bảo giá tốt nhất</p>
-        </div>
-    </div>
-</div>
-);
+
+    );
 }
 export default Service;

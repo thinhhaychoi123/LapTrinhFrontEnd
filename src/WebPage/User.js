@@ -15,7 +15,7 @@ const Login = () => {
         if (loggedInUser) {
             setLoggedInUsername(loggedInUser);
         }
-    }, []); // Empty dependency array to run effect only once on mount
+    }, []); 
 
     const ProceedLogin = (e) => {
         e.preventDefault();

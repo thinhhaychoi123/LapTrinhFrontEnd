@@ -1,39 +1,55 @@
-import React from 'react';
+import React from "react";
 
 const Footer = () => {
-    return (
-        <footer className="bg-dark text-white py-4">
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-6">
-                        <h5>Tour du lịch</h5>
-                        <p>Chào mừng đến với Công ty Du lịch XYZ, nơi mang đến những trải nghiệm du lịch tuyệt vời và đáng nhớ nhất cho bạn và gia đình. Với chúng tôi, du khách không chỉ đơn giản đi du lịch mà còn được khám phá những vùng đất mới lạ, hấp dẫn và giàu văn hóa. Chúng tôi tự hào là đối tác đáng tin cậy của bạn trong mọi chuyến đi, cam kết mang đến những trải nghiệm du lịch an toàn, chuyên nghiệp và thân thiện với môi trường. Hãy cùng chúng tôi khám phá và tận hưởng những khoảnh khắc đáng nhớ trên mỗi hành trình du lịch của bạn!</p>
-                    </div>
-                    <div className="col-md-3">
-                        <h5>Explore</h5>
-                        <ul className="list-unstyled">
-                            <li><a href="#">Trang chủ</a></li>
-                            <li><a href="#">Tour trong nước</a></li>
-                            <li><a href="#">Tour nước ngoài</a></li>
-                        </ul>
-                    </div>
-                    <div className="col-md-3">
-                        <h5>Liên hệ</h5>
-                        <ul className="list-unstyled">
-                            <li><a href="#">Địa chỉ: Biên Hoà, Đồng Nai</a></li>
-                            <li><a href="#">Số điện thoại: 0123456789</a></li>
-                            <li><a href="#">Gmail: 21130176@st.hcmuaf.edu.vn</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div className="row mt-3">
-                    <div className="col-md-12 text-center">
-                        <p>&copy; {new Date().getFullYear()} Thực hiển bỏi 3 ngự lâm</p>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    );
+  
+
+  return (
+      <div>
+        <section class="">
+  <footer className="bg-body-tertiary">
+    <div className="container p-4">
+      <div className="row">
+        <div className="col-lg-6 col-md-12 mb-4 mb-md-0">
+          <h5 className="text-uppercase">Footer Content</h5>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
+            molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae
+            aliquam voluptatem veniam, est atque cumque eum delectus sint!
+          </p>
+        </div>
+
+        <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 className="text-uppercase">Links</h5>
+
+          <ul className="list-unstyled mb-0">
+            <li>
+              <a href="#!" className="text-body">Link 1</a>
+            </li>
+            <li>
+              <a href="#!" className="text-body">Link 2</a>
+            </li>
+            <li>
+              <a href="#!" className="text-body">Link 3</a>
+            </li>
+            <li>
+              <a href="#!" className="text-body">Link 4</a>
+            </li>
+          </ul>
+        </div>
+
+        
+      </div>
+    </div>
+
+    <div className="text-center p-3" style={{backgroundColor: 'rgba(0, 0, 0, 0.05)'}}>
+      © 2020 Copyright:
+      <a className="text-body" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+  </footer>
+</section>
+      </div>
+  );
 };
 
 export default Footer;

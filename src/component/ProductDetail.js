@@ -1,178 +1,112 @@
-// ------------------ProductDetail.js-------------------
-import { useLoaderData, useNavigate } from "react-router-dom";
-import productData from "../data/ProductData";
-import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
-import Navbar from "../WebPage/Navbar";
-import Footer from "../WebPage/Footer";
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
+import Header from './Header';
+import "../css/style.css";
 
-async function getProduct(id) {
-    return productData.find((product) => product.id == id);
-}
+const ProductDetail = () => {
+    const { id } = useParams();
+    const [tour, setTour] = useState(null);
+    const [isDarkMode, setIsDarkMode] = useState(false);
 
-export async function loadProduct({ params }) {
-    const product = await getProduct(params.id);
-    console.log(product);
-    return product;
-}
-
-export default function ProductDetail() {
-    const product = useLoaderData();
-    const navigate = useNavigate();
-    const dispatch = useDispatch();
-    const cart = useSelector(state => state.cart);
-
-    const [adults, setAdults] = useState(1);
-    const [children, setChildren] = useState(0);
-    const adultPrice = 1600000; // Example price
-    const totalPrice = adults * adultPrice + children * (adultPrice / 2);
-
-    if (!product) {
-        return <div>Loading...</div>;
-    }
-
-    const isInCart = cart.some(item => item.id === product.id);
-
-    const addToCart = () => {
-        dispatch({ type: 'cart.add', payload: { product } });
+    const toggleDarkMode = () => {
+        setIsDarkMode(!isDarkMode);
     };
 
-    const removeFromCart = () => {
-        dispatch({ type: 'cart.minus', payload: { product } });
-    };
+    useEffect(() => {
+        const fetchTour = async () => {
+            try {
+                const response = await axios.get(`http://localhost:3001/tour/${id}`);
+                setTour(response.data);
 
-    const handleAdultChange = (value) => {
-        setAdults(value >= 1 ? value : 1);
-    };
+                // Lưu lịch sử xem sản phẩm vào local storage
+                const history = JSON.parse(localStorage.getItem("viewHistory")) || [];
+                const newHistory = history.filter(item => item.id !== response.data.id); // Remove duplicate
+                newHistory.unshift(response.data); // Add new view to the beginning
+                localStorage.setItem("viewHistory", JSON.stringify(newHistory.slice(0, 10))); // Keep only latest 10
+            } catch (error) {
+                console.error('Error fetching product:', error);
+            }
+        };
 
-    const handleChildrenChange = (value) => {
-        setChildren(value >= 0 ? value : 0);
-    };
+        fetchTour();
+    }, [id]);
+
+    if (!tour) return <div>Loading...</div>;
 
     return (
         <div>
-            <Navbar />
-            <section id="productDetails" className="pb-5">
-                <div className="container mt-4">
+            <Header isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+            <div className='p-3 mb-2 bg-body-secondary'>
+                <div className="container">
                     <div className="row">
                         <div className="col-md-8">
-                            <h1 className="text-primary">{product.name}</h1>
-                            <div className="position-relative">
-                                <img src={product.image1} alt={product.name} className="img-fluid" />
-                                <div className="d-flex justify-content-around border-success p-2">
-                                    <span><i className="bi bi-geo-alt-fill"></i>{product.start}</span>
-                                    <span><i className="bi bi-clock"></i>{product.time}</span>
-                                    <span>Phương tiện:<i className="bi bi-bus-front"></i><i className="bi bi-airplane"></i></span>
-                                </div>
-                                <div className="mt-4">
-                                    <p className="fs-2 text-primary">{product.location}</p>
-                                    <p>
-                                        {product.content}
-                                    </p>
-                                </div>
+                            <h2>{tour.name}</h2>
+                            <img src={tour.image_introduce} alt={tour.name} className="img-fluid" />
+                            <div className="mt-3">
+                                <h5 className='fs-3 text-primary'>{tour.description.title}</h5>
+                                <p className='border border-4 p-3 bg-light text-dark'>{tour.description.content}</p>
                             </div>
-                            <p className="mt-2">{product.description}</p>
+
+                            <div className="mt-3 border border-4 p-3 bg-light text-dark">
+                                <h5>Chương trình tour</h5>
+                                {tour.detail.map(day => (
+                                    <div key={day.id} className="mt-4">
+                                        <h6>{day.name}</h6>
+                                        {day.route.map((routeItem, index) => (
+                                            <div key={index} className="ml-3">
+                                                {routeItem.time && <p><strong>{routeItem.time}</strong></p>}
+                                                <p>{routeItem.description}</p>
+                                                {routeItem.image && <img src={routeItem.image} alt='' style={{ width: '100%', maxWidth: '710px' }} />}
+                                            </div>
+                                        ))}
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                         <div className="col-md-4">
-                            <div className="card">
-                                <div className="card-body">
-                                    <h5 className="card-title">Lịch khởi hành & giá</h5>
-                                    <div className="form-group">
-                                        <label htmlFor="date-select">Chọn ngày khởi hành:</label>
-                                        <select id="date-select" className="form-control">
-                                            <option>23/06/2023</option>
-                                            <option>30/06/2023</option>
-                                            <option>14/07/2023</option>
-                                        </select>
-                                    </div>
-                                    <div className="form-group">
-                                        <label>Người lớn:</label>
-                                        <div className="input-group">
-                                            <div className="input-group-prepend">
-                                                <button 
-                                                    className="btn btn-outline-secondary" 
-                                                    type="button" 
-                                                    onClick={() => handleAdultChange(adults > 1 ? adults - 1 : 1)}
-                                                >-</button>
-                                            </div>
-                                            <input 
-                                                type="number" 
-                                                className="form-control text-center" 
-                                                value={adults} 
-                                                readOnly 
-                                            />
-                                            <div className="input-group-append">
-                                                <button 
-                                                    className="btn btn-outline-secondary" 
-                                                    type="button" 
-                                                    onClick={() => handleAdultChange(adults + 1)}
-                                                >+</button>
-                                            </div>
+                            <div className="fixed-sidebar">
+                                <div className="card">
+                                    <div className="card-body">
+                                        <h5 className="card-title">Lịch Trình và Giá Tour</h5>
+                                        <p>Chọn Lịch Trình và Xem Giá:</p>
+                                        {/* Lịch trình */}
+                                        <div className="form-group">
+                                            <label>Người lớn:</label>
+                                            <input type="number" className="form-control" value={4} readOnly />
                                         </div>
-                                        <p className="text-right mt-1 ">{adults} x 1.600.000 VND</p>
-                                    </div>
-                                    <div className="form-group">
-                                        <label>Trẻ em:</label>
-                                        <div className="input-group">
-                                            <div className="input-group-prepend">
-                                                <button 
-                                                    className="btn btn-outline-secondary" 
-                                                    type="button" 
-                                                    onClick={() => handleChildrenChange(children > 0 ? children - 1 : 0)}
-                                                >-</button>
-                                            </div>
-                                            <input 
-                                                type="number" 
-                                                className="form-control text-center" 
-                                                value={children} 
-                                                readOnly 
-                                            />
-                                            <div className="input-group-append">
-                                                <button 
-                                                    className="btn btn-outline-secondary" 
-                                                    type="button" 
-                                                    onClick={() => handleChildrenChange(children + 1)}
-                                                >+</button>
-                                            </div>
+                                        <div className="form-group">
+                                            <label>Trẻ em:</label>
+                                            <input type="number" className="form-control" value={0} readOnly />
                                         </div>
-                                        <p className="text-right mt-1">{children} x 800.000 VND</p>
+                                        <div className="form-group">
+                                            <label>Trẻ nhỏ:</label>
+                                            <input type="number" className="form-control" value={0} readOnly />
+                                        </div>
+                                        <h5 className="mt-3">Tổng Giá Tour: {tour.price_Adult.toLocaleString()} VND</h5>
+                                        <button className="btn btn-warning mt-3">Liên hệ tư vấn</button>
+                                        <button className="btn btn-primary mt-2">Đặt Tour ngay</button>
                                     </div>
-                                    <p className="text-muted">Liên hệ để xác nhận chỗ</p>
-                                    <p className="font-weight-bold">Tổng cộng: {totalPrice.toLocaleString()} VND</p>
-                                    <button type="button" className="btn btn-warning w-100 mb-2">Liên hệ tư vấn</button>
-                                    
-                                    {isInCart ? (
-                                        <button
-                                            type="button"
-                                            className="btn btn-danger w-100 mb-2"
-                                            onClick={removeFromCart}
-                                        >
-                                            Loại bỏ
-                                        </button>
-                                    ) : (
-                                        <button
-                                            type="button"
-                                            className="btn btn-primary w-100"
-                                            onClick={addToCart}
-                                        >
-                                            Thêm vào giỏ hàng
-                                        </button>
-                                    )}
+                                </div>
+                                <div className="card mt-3">
+                                    <div className="card-body">
+                                        <ul style={{listStyle: 'none'}}>
+                                            <li><i class="bi bi-check2 text-success me-3"></i> Bảo hiểm</li>
+                                            <li><i class="bi bi-check2 text-success me-3"></i> Hướng dẫn viên</li>
+                                            <li><i class="bi bi-check2 text-success me-3"></i> Bữa ăn</li>
+                                            <li><i class="bi bi-check2 text-success me-3"></i> Nhà dân homestay</li>
+                                            <li><i class="bi bi-check2 text-success me-3"></i> Vé tham quan</li>
+                                            <li><i class="bi bi-check2 text-success me-3"></i> Xe đưa đón</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                            <ul className="list-unstyled mt-3">
-                                <li><i className="bi bi-check-lg text-success"></i> Bảo hiểm</li>
-                                <li><i className="bi bi-check-lg text-success"></i> Xe đưa đón</li>
-                                <li><i className="bi bi-check-lg text-success"></i> Bữa ăn</li>
-                                <li><i className="bi bi-check-lg text-success"></i> Hướng dẫn viên</li>
-                                <li><i className="bi bi-check-lg text-success"></i> Khách sạn 4*</li>
-                            </ul>
                         </div>
                     </div>
                 </div>
-            </section>
-            <Footer />
+            </div>
         </div>
     );
-}
-// -------------------------------------
+};
+
+export default ProductDetail;

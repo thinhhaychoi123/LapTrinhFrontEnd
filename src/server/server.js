@@ -1,25 +1,43 @@
-import express from 'express';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify'; // Thêm thư viện react-toastify để hiển thị thông báo
 
-const app = express();
-const port = 3031;
+function Service() {
+    const [data, setData] = useState([]);
+    const [error, setError] = useState(null);
 
-app.use(express.json());
+    useEffect(() => {
+        axios.get('http://localhost:3031/users')
+            .then(res => setData(res.data))
+            .catch(err => {
+                console.log(err);
+                setError('Failed to fetch users. Please try again later.');
+                toast.error('Failed to fetch users. Please try again later.');
+            });
+    }, []);
 
-let users = [
-    { username: 'admin', password: 'admin123' },
-    { username: 'user', password: 'user123' }
-];
+    return (
+        <div className="container">
+            <h1>User List</h1>
+            {error && <p className="text-danger">{error}</p>}
+            <table className="table">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        {/* Loại bỏ mật khẩu để bảo mật */}
+                    </tr>
+                </thead>
+                <tbody>
+                    {data.map((user, index) => (
+                        <tr key={index}>
+                            <td>{user.username}</td>
+                            {/* Không hiển thị mật khẩu */}
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
+    );
+}
 
-app.get('/users', (req, res) => {
-    res.json(users);
-});
-
-app.post('/user', (req, res) => {
-    const newUser = req.body;
-    users.push(newUser);
-    res.status(201).json(newUser);
-});
-
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
-});
+export default Service;
