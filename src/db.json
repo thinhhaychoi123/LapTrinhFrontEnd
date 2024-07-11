@@ -1,0 +1,102 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "admin123"
+    },
+    {
+      "id": "2",
+      "username": "user",
+      "password": "user123"
+    },
+    {
+      "id": "abc",
+      "name": "le minh tai",
+      "password": "abc123",
+      "email": "trongphuc27072003@gmail.com",
+      "phone": "0334235789",
+      "country": "",
+      "address": "",
+      "gender": "male"
+    },
+    {
+      "id": "abc",
+      "name": "Le Minh ",
+      "password": "abc456",
+      "email": "trongphuc27072003@gmail.com",
+      "phone": "0342137337",
+      "country": "hochiminh",
+      "address": "",
+      "gender": "male"
+    },
+    {
+      "id": "abc",
+      "name": "Tran Dang Khoa",
+      "password": "abc888",
+      "email": "trongphuc27072003@gmail.com",
+      "phone": "",
+      "country": "danang",
+      "address": "",
+      "gender": "male"
+    },
+    {
+      "id": "0adb85f5-ab56-40f0-9042-53338fe523e7",
+      "name": "Le Thang",
+      "password": "123",
+      "email": "trongphuc27072003@gmail.com",
+      "phone": "",
+      "country": "ho chi minh",
+      "address": "",
+      "gender": "male"
+    },
+    {
+      "id": "8bd228c0-38ff-474c-ab53-73f751927192",
+      "name": "Le Hai",
+      "password": "123",
+      "email": "trongphuc27072003@gmail.com",
+      "phone": "",
+      "country": "ho chi minh",
+      "address": "",
+      "gender": "male"
+    },
+    {
+      "id": "dcb8",
+      "username": "goku",
+      "name": "Ta Thang",
+      "password": "7777",
+      "email": "trongphuc27072003@gmail.com",
+      "phone": "",
+      "country": "da nang",
+      "address": "",
+      "gender": "male"
+    },
+    {
+      "id": "898a",
+      "username": "anhtai",
+      "password": "1",
+      "email": "trongphuc27072003@gmail.com",
+      "phone": "",
+      "country": "ho chi minh",
+      "gender": "male"
+    },
+    {
+      "id": "dc37",
+      "username": "a",
+      "password": "123",
+      "email": "trongphuc27072003@gmail.com",
+      "phone": "",
+      "country": "ho chi minh",
+      "gender": "male"
+    },
+    {
+      "id": "7937",
+      "username": "abc123",
+      "password": "123",
+      "email": "trongphuc27072003@gmail.com",
+      "phone": "",
+      "country": "",
+      "gender": "male"
+    }
+  ]
+}
