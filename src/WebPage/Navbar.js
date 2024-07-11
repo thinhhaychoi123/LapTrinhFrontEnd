@@ -12,6 +12,11 @@ const Navbar = () => {
   const navigateToLoginPage = () => {
     navigate('/user'); // điều hướng đến đường dẫn '/login'
   };
+  const handleLogout = () => {
+    sessionStorage.removeItem('username'); // Xóa thông tin đăng nhập từ sessionStorage
+    localStorage.removeItem('username'); // Xóa thông tin đăng nhập từ localStorage (nếu có)
+    navigate('/user'); // Điều hướng về trang đăng nhập sau khi đăng xuất
+  };
 return(
     <div>
           <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -34,9 +39,11 @@ return(
               <a class="nav-link" href="#">Tour nước ngoài</a>
             </li>
           </ul>
-          <span className="navbar-text me-3" style={{ cursor: 'pointer' }} onClick={navigateToLoginPage}>
+          {
+              <span className="navbar-text me-3" style={{ cursor: 'pointer' }} onClick={navigateToLoginPage}>
                 <i className="bi bi-person fs-1"></i>
               </span>
+            }
             <span class="navbar-text">
                 <i class="bi bi-bag fs-2">{cart.length}</i>
             </span>
