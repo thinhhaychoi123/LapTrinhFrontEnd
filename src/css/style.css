@@ -5,11 +5,14 @@
 .hsshadow:hover {
     box-shadow: rgba(19, 207, 231, 0.25) 0px 20px 20px, rgba(19, 207, 231, 0.25) 0px -12px 30px, rgba(19, 207, 231, 0.25) 0px 4px 6px, rgba(19, 207, 231, 0.25) 0px 12px 13px, rgba(19, 207, 231, 0.25) 0px -3px 5px;
 }
+<<<<<<< HEAD
 .logo {
     width: 80px;
     height: auto;
     margin-left: 100px;
 }
+=======
+>>>>>>> aa8f3fd81bc3c55f08fc7d6d711ec4bfd61c26ff
 a {
     text-decoration: none;
     color: #4C4C4C;
@@ -38,6 +41,7 @@ li {
     color: #fff;
     border: 1px solid #444;
 }
+<<<<<<< HEAD
 .theme-light {
     --color-primary: #0060df;
     --color-secondary: #fbfbfe;
@@ -138,3 +142,6 @@ li {
         top: 20px; /* Adjust as per your layout */
     }
     
+=======
+
+>>>>>>> aa8f3fd81bc3c55f08fc7d6d711ec4bfd61c26ff

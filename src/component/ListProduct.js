@@ -5,7 +5,10 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import Search from "./Search";
 import { Link } from "react-router-dom";
 import "../css/style.css"
+<<<<<<< HEAD
 import Header from "./Header";
+=======
+>>>>>>> aa8f3fd81bc3c55f08fc7d6d711ec4bfd61c26ff
 
 const ListProduct = () => {
     const [tours, setTours] = useState([]);
@@ -101,7 +104,10 @@ const ListProduct = () => {
 
     return (
         <div>
+<<<<<<< HEAD
             <Header />
+=======
+>>>>>>> aa8f3fd81bc3c55f08fc7d6d711ec4bfd61c26ff
             <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} handleSearch={handleSearch} filters={filters} />
             <div className="container my-4">
             <h2 className="mb-4">Tour du lịch Úc từ Hồ Chí Minh</h2>
