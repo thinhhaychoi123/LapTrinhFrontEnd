@@ -5,6 +5,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import Search from "./Search";
 import { Link } from "react-router-dom";
 import "../css/style.css"
+import Header from "./Header";
 
 const ListProduct = () => {
     const [tours, setTours] = useState([]);
@@ -100,10 +101,11 @@ const ListProduct = () => {
 
     return (
         <div>
+            <Header />
             <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} handleSearch={handleSearch} filters={filters} />
             <div className="container my-4">
-            <h2 className="mb-4">Tour du lịch Úc từ Hồ Chí Minh</h2>
-            <p>Khám phá Úc với iVIVU: Sydney năng động, Melbourne sành điệu, Uluru huyền bí. Hành trình khám phá văn hóa và thiên nhiên kỳ vĩ. Đặt tour ngay!</p>
+            <h2 className="mb-4">Tour du lịch trong nước và ngoài nước</h2>
+            <p>Hãy để chúng tôi dẫn dắt bạn đến những địa điểm tuyệt vời và khám phá những câu chuyện thú vị đằng sau mỗi địa danh trên hành trình của bạn!</p>
             <div className="row mb-3">
                 <div className="col-md-3 border">
                     <ul className="list-unstyled">

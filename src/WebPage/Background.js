@@ -4,12 +4,11 @@ import Search from "../component/Search";
 
 const Background = () => {
     return (
-        <div className="row mt-2 mb-4 position-relative" style={{
+        <div className="row mt-0 mb-4 d-flex align-items-center" style={{
             height: '400px',
             backgroundImage: `url(${background})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            clipPath: 'polygon(0 0, 100% 0, 85% 100%, 0% 100%)'
         }}>
             <Search />
 
