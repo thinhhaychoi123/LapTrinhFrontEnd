@@ -92,7 +92,14 @@ const ProductDetail = () => {
                     </div>
                 ))}
             </div>
-
+            <div className="mt-3 border border-4 p-3 mb-2 bg-light text-dark ">
+            <span className='fs-3 text-primary'>Hướng dẫn viên</span>
+            <div className='mt-4'>
+            Hướng Dẫn Viên (HDV) sẽ liên lạc với Quý Khách khoảng 2-3 ngày trước khi khởi hành để sắp xếp giờ đón và cung cấp các thông tin cần thiết cho chuyển đi.
+            </div>
+            </div>
+            
+            
 
 
             
