@@ -3,10 +3,10 @@ import axios from "axios";
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Header from "../component/Header";
-import Search from "../component/Search";
 import Service from "./Service";
 import Background from "../WebPage/Background";
 import HistoryView from "./HistoryView";
+import Footer from "./Footer";
 import "../css/style.css";
 
 const Home = () => {
@@ -23,22 +23,19 @@ const Home = () => {
                 const response = await axios.get('http://localhost:3001/tour');
                 setTours(response.data);
             } catch (error) {
-                console.error('Lỗi khi lấy dữ liệu từ API:', error);
+                console.error('Error fetching data:', error);
             }
         };
 
         fetchTours();
     }, []);
 
-    // Lấy danh sách sản phẩm hiện tại
+    // Pagination logic
     const indexOfLastTour = currentPage * toursPerPage;
     const indexOfFirstTour = indexOfLastTour - toursPerPage;
     const currentTours = tours.slice(indexOfFirstTour, indexOfLastTour);
-
-    // Tính tổng số trang
     const totalPages = Math.ceil(tours.length / toursPerPage);
 
-    // Hàm chuyển trang
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     const handleAddToCart = (tour) => {
@@ -64,7 +61,7 @@ const Home = () => {
                     {currentTours.map(tour => (
                         <div className="col" key={tour.id}>
                             <div className="card h-100 hsshadow">
-                                <Link to={`/product/${tour.id}`} className="link-offset-2 link-underline link-underline-opacity-0">
+                                <Link to={`/product/${tour.id}`} className="link-offset-2 link-underline link-underline-opacity-0 shadowBlue">
                                     <img src={tour.image} alt={tour.name} className="card-img-top" />
                                     <div className="card-body" style={{ height: '296px' }}>
                                         <h5 className="card-title">{tour.name}</h5>
@@ -81,7 +78,7 @@ const Home = () => {
                                             className="btn btn-danger"
                                             onClick={() => handleRemoveFromCart(tour)}
                                         >
-                                            Xóa sản phẩm
+                                            Remove from Cart
                                         </button>
                                     ) : (
                                         <button
@@ -89,7 +86,7 @@ const Home = () => {
                                             className="btn btn-warning"
                                             onClick={() => handleAddToCart(tour)}
                                         >
-                                            Thêm vào giỏ hàng
+                                            Add to Cart
                                         </button>
                                     )}
                                 </div>
@@ -109,6 +106,7 @@ const Home = () => {
                     </ul>
                 </nav>
             </div>
+            <Footer />
         </div>
     );
 };

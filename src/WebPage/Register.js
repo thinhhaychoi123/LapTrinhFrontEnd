@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { v4 as uuidv4 } from 'uuid';
+import Header from "../component/Header";
+import "../css/style.css";
 
 const Register = () => {
     const [username, setUsername] = useState('');
@@ -46,7 +48,7 @@ const Register = () => {
         
         if (isValidate()) {
             // Gửi dữ liệu đăng ký đến API
-            fetch("http://localhost:3031/users", {
+            fetch("http://localhost:3001/users", {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(newUser)
@@ -66,41 +68,43 @@ const Register = () => {
     }
 
     return (
-        <div className="offset-lg-3 col-lg-6">
-            <form onSubmit={handleSubmit} className="container">
+        <div>
+            <Header />
+        <div className="bklogin d-flex ">
+            <form onSubmit={handleSubmit} className="container mt-5" style={{width:'700px'}}>
                 <div className="card">
                     <div className="card-header">
-                        <h1>User Registration</h1>
+                        <h1>Đăng ký tài khoản</h1>
                     </div>
-                    <div className="card-body">
+                    <div className="card-body" >
                         <div className="row">
                             <div className="col-lg-6">
                                 <div className="form-group">
-                                    <label>User Name <span className="errmsg">*</span></label>
+                                    <label>Tài khoản: <span className="errmsg">*</span></label>
                                     <input value={username} onChange={e => setUsername(e.target.value)} className="form-control" />
                                 </div>
                             </div>
                             <div className="col-lg-6">
                                 <div className="form-group">
-                                    <label>Password <span className="errmsg">*</span></label>
+                                    <label>Mật Khẩu <span className="errmsg">*</span></label>
                                     <input value={password} onChange={e => setPassword(e.target.value)} type="password" className="form-control" />
                                 </div>
                             </div>
                             <div className="col-lg-6">
                                 <div className="form-group">
-                                    <label>Email <span className="errmsg">*</span></label>
+                                    <label>Email: <span className="errmsg">*</span></label>
                                     <input value={email} onChange={e => setEmail(e.target.value)} className="form-control" />
                                 </div>
                             </div>
                             <div className="col-lg-6">
                                 <div className="form-group">
-                                    <label>Phone <span className="errmsg"></span></label>
+                                    <label>Số điện thoại: <span className="errmsg"></span></label>
                                     <input value={phone} onChange={e => setPhone(e.target.value)} className="form-control" />
                                 </div>
                             </div>
                             <div className="col-lg-6">
                                 <div className="form-group">
-                                    <label>Country <span className="errmsg">*</span></label>
+                                    <label>Quốc gia: <span className="errmsg">*</span></label>
                                     <select value={country} onChange={e => setCountry(e.target.value)} className="form-control">
                                         <option value="ha noi">Hà Nội</option>
                                         <option value="ho chi minh">Hồ Chí Minh</option>
@@ -111,22 +115,23 @@ const Register = () => {
                             </div>
                             <div className="col-lg-6">
                                 <div className="form-group">
-                                    <label>Gender</label>
+                                    <label>Giới tính</label>
                                     <br />
                                     <input type="radio" checked={gender === 'male'} onChange={() => setGender('male')} name="gender" className="app-check" />
-                                    <label>Male</label>
+                                    <label>Nam</label>
                                     <input type="radio" checked={gender === 'female'} onChange={() => setGender('female')} name="gender" className="app-check" />
-                                    <label>Female</label>
+                                    <label>Nữ</label>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="card-footer">
-                        <button type="submit" className="btn btn-primary">Register</button> |
-                        <Link to={'/user'} className="btn btn-danger">Close</Link>
+                    <div className="card-footer d-flex justify-content-evenly">
+                        <button type="submit" className="btn btn-primary">Đăng ký</button>
+                        <Link to={'/user'} className="btn btn-danger">Đăng nhập</Link>
                     </div>
                 </div>
             </form>
+        </div>
         </div>
     );
 }

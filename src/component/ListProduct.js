@@ -4,23 +4,21 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Search from "./Search";
 import { Link } from "react-router-dom";
-import "../css/style.css"
+import "../css/style.css";
+import Header from "./Header";
 
 const ListProduct = () => {
     const [tours, setTours] = useState([]);
     const [locationEnd, setLocationEnd] = useState('');
-    // chức năng sắp xếp
     const [sortBy, setSortBy] = useState(null);
-    // hiển thị danh sách lọc
     const [filters, setFilters] = useState({
         location: '',
         start: '',
         startDate: ''
     });
     const [searchTerm, setSearchTerm] = useState('');
-
-    // chức năng phân trang
     const [currentPage, setCurrentPage] = useState(1);
+    const [selectedLocation, setSelectedLocation] = useState('');
     const itemsPerPage = 10;
 
     const dispatch = useDispatch();
@@ -60,13 +58,12 @@ const ListProduct = () => {
 
     const handleFilterLocationEnd = (location) => {
         setFilters({ ...filters, location: location });
+        setSelectedLocation(location);
         navigate(`/list?location=${location}&start=${filters.start}&startDate=${filters.startDate}&search=${searchTerm}`);
     };
 
     const sortTours = (filteredTours) => {
         switch (sortBy) {
-            case 'recommend':
-                return filteredTours; // Logic sắp xếp theo đề xuất của iVIVU
             case 'duration':
                 return filteredTours.sort((a, b) => a.duration - b.duration); // Sắp xếp theo thời lượng tour
             case 'start_date':
@@ -115,35 +112,35 @@ const ListProduct = () => {
             <Header />
             <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} handleSearch={handleSearch} filters={filters} />
             <div className="container my-4">
-            <h2 className="mb-4">Tour du lịch Úc từ Hồ Chí Minh</h2>
-            <p>Khám phá Úc với iVIVU: Sydney năng động, Melbourne sành điệu, Uluru huyền bí. Hành trình khám phá văn hóa và thiên nhiên kỳ vĩ. Đặt tour ngay!</p>
-            <div className="row mb-3">
-                <div className="col-md-3 border">
-                    <ul className="list-unstyled">
-                        <li><strong className="fs-5">Tour HOT Nước Ngoài</strong></li>
-                        <li><a href="#" onClick={() => handleFilterLocationEnd('Trung Quốc')}>Trung Quốc</a></li>
-                        <li><a href="#" onClick={() => handleFilterLocationEnd('Thái Lan')}>Thái Lan</a></li>
-                        <li><a href="#" onClick={() => handleFilterLocationEnd('Singapore')}>Singapore</a></li>
-                        <li><a href="#" onClick={() => handleFilterLocationEnd('Nhật Bản')}>Nhật Bản</a></li>
-                        <li><a href="#" onClick={() => handleFilterLocationEnd('Châu Âu')}>Châu Âu</a></li>
-                        <li><a href="#" onClick={() => handleFilterLocationEnd('Hàn Quốc')}>Hàn Quốc</a></li>
-                        <li><a href="#" onClick={() => handleFilterLocationEnd('Bali')}>Bali</a></li>
-                        <li><a href="#" onClick={() => handleFilterLocationEnd('Campuchi')}>Campuchi</a></li>
-                        <li><a href="#" onClick={() => handleFilterLocationEnd('Canada')}>Canada</a></li>
-                    </ul>
+                <h2 className="mb-4">Tour du lịch trong nước và ngoài nước</h2>
+                <p>Hãy để chúng tôi dẫn dắt bạn đến những địa điểm tuyệt vời và khám phá những câu chuyện thú vị đằng sau mỗi địa danh trên hành trình của bạn!</p>
+                <div className="row mb-3">
+                    <div className="col-md-3 border">
+                        <ul className="list-unstyled">
+                            <li><strong className="fs-5">Tour HOT Nước Ngoài</strong></li>
+                            <li><a href="#" className={`shadowRed ${selectedLocation === 'Trung Quốc' ? 'selected' : ''}`} onClick={() => handleFilterLocationEnd('Trung Quốc')}>Trung Quốc</a></li>
+                            <li><a href="#" className={`shadowRed ${selectedLocation === 'Thái Lan' ? 'selected' : ''}`} onClick={() => handleFilterLocationEnd('Thái Lan')}>Thái Lan</a></li>
+                            <li><a href="#" className={`shadowRed ${selectedLocation === 'Singapore' ? 'selected' : ''}`} onClick={() => handleFilterLocationEnd('Singapore')}>Singapore</a></li>
+                            <li><a href="#" className={`shadowRed ${selectedLocation === 'Nhật Bản' ? 'selected' : ''}`} onClick={() => handleFilterLocationEnd('Nhật Bản')}>Nhật Bản</a></li>
+                            <li><a href="#" className={`shadowRed ${selectedLocation === 'Châu Âu' ? 'selected' : ''}`} onClick={() => handleFilterLocationEnd('Châu Âu')}>Châu Âu</a></li>
+                            <li><a href="#" className={`shadowRed ${selectedLocation === 'Hàn Quốc' ? 'selected' : ''}`} onClick={() => handleFilterLocationEnd('Hàn Quốc')}>Hàn Quốc</a></li>
+                            <li><a href="#" className={`shadowRed ${selectedLocation === 'Bali' ? 'selected' : ''}`} onClick={() => handleFilterLocationEnd('Bali')}>Bali</a></li>
+                            <li><a href="#" className={`shadowRed ${selectedLocation === 'Campuchi' ? 'selected' : ''}`} onClick={() => handleFilterLocationEnd('Campuchi')}>Campuchi</a></li>
+                            <li><a href="#" className={`shadowRed ${selectedLocation === 'Canada' ? 'selected' : ''}`} onClick={() => handleFilterLocationEnd('Canada')}>Canada</a></li>
+                        </ul>
 
                         <ul className="list-unstyled">
                             <li><strong className="fs-5">Tour HOT Trong Nước</strong></li>
-                            <li><a href="#" onClick={() => handleFilterLocationEnd('Hạ Long')}>Hạ Long</a></li>
-                            <li><a href="#" onClick={() => handleFilterLocationEnd('Nha Trang')}>Nha Trang</a></li>
-                            <li><a href="#" onClick={() => handleFilterLocationEnd('Đà Nẵng')}>Đà Nẵng</a></li>
-                            <li><a href="#" onClick={() => handleFilterLocationEnd('Sapa')}>Sapa</a></li>
-                            <li><a href="#" onClick={() => handleFilterLocationEnd('Quy Nhơn')}>Quy Nhơn</a></li>
-                            <li><a href="#" onClick={() => handleFilterLocationEnd('Phú Yên')}>Phú Yên</a></li>
-                            <li><a href="#" onClick={() => handleFilterLocationEnd('Hà Nội')}>Hà Nội</a></li>
-                            <li><a href="#" onClick={() => handleFilterLocationEnd('Buôn Mê Thuật')}>Buôn Mê Thuật</a></li>
-                            <li><a href="#" onClick={() => handleFilterLocationEnd('Phú Quốc')}>Phú Quốc</a></li>
-                            <li><a href="#" onClick={() => handleFilterLocationEnd('Miền Tây')}>Miền Tây</a></li>
+                            <li><a href="#" className="shadowRed" onClick={() => handleFilterLocationEnd('Hạ Long')}>Hạ Long</a></li>
+                            <li><a href="#" className="shadowRed" onClick={() => handleFilterLocationEnd('Nha Trang')}>Nha Trang</a></li>
+                            <li><a href="#" className="shadowRed" onClick={() => handleFilterLocationEnd('Đà Nẵng')}>Đà Nẵng</a></li>
+                            <li><a href="#" className="shadowRed" onClick={() => handleFilterLocationEnd('Sapa')}>Sapa</a></li>
+                            <li><a href="#" className="shadowRed" onClick={() => handleFilterLocationEnd('Quy Nhơn')}>Quy Nhơn</a></li>
+                            <li><a href="#" className="shadowRed" onClick={() => handleFilterLocationEnd('Phú Yên')}>Phú Yên</a></li>
+                            <li><a href="#" className="shadowRed" onClick={() => handleFilterLocationEnd('Hà Nội')}>Hà Nội</a></li>
+                            <li><a href="#" className="shadowRed" onClick={() => handleFilterLocationEnd('Buôn Mê Thuật')}>Buôn Mê Thuật</a></li>
+                            <li><a href="#" className="shadowRed" onClick={() => handleFilterLocationEnd('Phú Quốc')}>Phú Quốc</a></li>
+                            <li><a href="#" className="shadowRed" onClick={() => handleFilterLocationEnd('Miền Tây')}>Miền Tây</a></li>
                         </ul>
                     </div>
                     <div className="col-md-9">
@@ -152,10 +149,9 @@ const ListProduct = () => {
                                 <p className="text-muted mb-0">Sắp xếp theo:</p>
                             </div>
                             <div>
-                                <button className="btn btn-outline-primary me-2" onClick={() => setSortBy('recommend')}>iVIVU Đề xuất</button>
-                                <button className="btn btn-outline-secondary me-2" onClick={() => setSortBy('duration')}>Thời gian</button>
-                                <button className="btn btn-outline-info me-2" onClick={() => setSortBy('start_date')}>Ngày khởi hành</button>
-                                <button className="btn btn-outline-dark me-2" onClick={() => setSortBy('price')}>Giá</button>
+                                    <button onClick={() => setSortBy('duration')} className={`btn btn-outline-success btn-sm me-2 ${sortBy === 'duration' ? 'btn-selected' : ''}`}>Thời lượng tour</button>
+                                    <button onClick={() => setSortBy('start_date')} className={`btn btn-outline-success btn-sm me-2 ${sortBy === 'start_date' ? 'btn-selected' : ''}`}>Ngày khởi hành</button>
+                                    <button onClick={() => setSortBy('price')} className={`btn btn-outline-success btn-sm ${sortBy === 'price' ? 'btn-selected' : ''}`}>Giá tour</button>
                             </div>
                         </div>
 
