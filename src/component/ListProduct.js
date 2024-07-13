@@ -4,8 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Search from "./Search";
 import { Link } from "react-router-dom";
-import "../css/style.css";
-import Header from "./Header";
+import "../css/style.css"
 
 const ListProduct = () => {
     const [tours, setTours] = useState([]);
@@ -116,22 +115,22 @@ const ListProduct = () => {
             <Header />
             <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} handleSearch={handleSearch} filters={filters} />
             <div className="container my-4">
-                <h2 className="mb-4">Tour du lịch trong nước và ngoài nước</h2>
-                <p>Hãy để chúng tôi dẫn dắt bạn đến những địa điểm tuyệt vời và khám phá những câu chuyện thú vị đằng sau mỗi địa danh trên hành trình của bạn!</p>
-                <div className="row mb-3">
-                    <div className="col-md-3 border">
-                        <ul className="list-unstyled">
-                            <li><strong className="fs-5">Tour HOT Nước Ngoài</strong></li>
-                            <li><a href="#" onClick={() => handleFilterLocationEnd('Trung Quốc')}>Trung Quốc</a></li>
-                            <li><a href="#" onClick={() => handleFilterLocationEnd('Thái Lan')}>Thái Lan</a></li>
-                            <li><a href="#" onClick={() => handleFilterLocationEnd('Singapore')}>Singapore</a></li>
-                            <li><a href="#" onClick={() => handleFilterLocationEnd('Nhật Bản')}>Nhật Bản</a></li>
-                            <li><a href="#" onClick={() => handleFilterLocationEnd('Châu Âu')}>Châu Âu</a></li>
-                            <li><a href="#" onClick={() => handleFilterLocationEnd('Hàn Quốc')}>Hàn Quốc</a></li>
-                            <li><a href="#" onClick={() => handleFilterLocationEnd('Bali')}>Bali</a></li>
-                            <li><a href="#" onClick={() => handleFilterLocationEnd('Campuchi')}>Campuchi</a></li>
-                            <li><a href="#" onClick={() => handleFilterLocationEnd('Canada')}>Canada</a></li>
-                        </ul>
+            <h2 className="mb-4">Tour du lịch Úc từ Hồ Chí Minh</h2>
+            <p>Khám phá Úc với iVIVU: Sydney năng động, Melbourne sành điệu, Uluru huyền bí. Hành trình khám phá văn hóa và thiên nhiên kỳ vĩ. Đặt tour ngay!</p>
+            <div className="row mb-3">
+                <div className="col-md-3 border">
+                    <ul className="list-unstyled">
+                        <li><strong className="fs-5">Tour HOT Nước Ngoài</strong></li>
+                        <li><a href="#" onClick={() => handleFilterLocationEnd('Trung Quốc')}>Trung Quốc</a></li>
+                        <li><a href="#" onClick={() => handleFilterLocationEnd('Thái Lan')}>Thái Lan</a></li>
+                        <li><a href="#" onClick={() => handleFilterLocationEnd('Singapore')}>Singapore</a></li>
+                        <li><a href="#" onClick={() => handleFilterLocationEnd('Nhật Bản')}>Nhật Bản</a></li>
+                        <li><a href="#" onClick={() => handleFilterLocationEnd('Châu Âu')}>Châu Âu</a></li>
+                        <li><a href="#" onClick={() => handleFilterLocationEnd('Hàn Quốc')}>Hàn Quốc</a></li>
+                        <li><a href="#" onClick={() => handleFilterLocationEnd('Bali')}>Bali</a></li>
+                        <li><a href="#" onClick={() => handleFilterLocationEnd('Campuchi')}>Campuchi</a></li>
+                        <li><a href="#" onClick={() => handleFilterLocationEnd('Canada')}>Canada</a></li>
+                    </ul>
 
                         <ul className="list-unstyled">
                             <li><strong className="fs-5">Tour HOT Trong Nước</strong></li>

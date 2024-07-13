@@ -7,10 +7,6 @@ import Search from "../component/Search";
 import Service from "./Service";
 import Background from "../WebPage/Background";
 import HistoryView from "./HistoryView";
-<<<<<<< HEAD
-import Footer from "./Footer";
-=======
->>>>>>> aa8f3fd81bc3c55f08fc7d6d711ec4bfd61c26ff
 import "../css/style.css";
 
 const Home = () => {
@@ -113,10 +109,6 @@ const Home = () => {
                     </ul>
                 </nav>
             </div>
-<<<<<<< HEAD
-            <Footer />
-=======
->>>>>>> aa8f3fd81bc3c55f08fc7d6d711ec4bfd61c26ff
         </div>
     );
 };
