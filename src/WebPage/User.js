@@ -1,8 +1,8 @@
-import usersData from 'file:///D:/git-tour/LapTrinhFrontEnd/src/data/data.json';
+import usersData from 'file:///D:/project/LapTrinhFrontEnd-main/src/data/data.json';
+import PropTypes from 'prop-types';
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import PropTypes from 'prop-types';
 import Header from "../component/Header";
 import "../css/style.css";
 

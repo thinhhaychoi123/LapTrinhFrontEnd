@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Header from "../component/Header";
-import Service from "./Service";
-import Background from "../WebPage/Background";
-import HistoryView from "./HistoryView";
-import Footer from "./Footer";
 import "../css/style.css";
+import Background from "../WebPage/Background";
+import Footer from "./Footer";
+import HistoryView from "./HistoryView";
+import Service from "./Service";
 
 const Home = () => {
     const [tours, setTours] = useState([]);
