@@ -59,7 +59,7 @@ const Header = ({ isDarkMode, toggleDarkMode }) => {
                                 <>
                                     <li className="nav-item">
                                         <span className="navbar-text me-3 text-light fs-4">
-                                            Welcome, {username}
+                                            Xin chào, {username}
                                         </span>
                                     </li>
                                     <li className="nav-item">

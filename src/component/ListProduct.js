@@ -119,28 +119,23 @@ const ListProduct = () => {
                         <ul className="list-unstyled">
                             <li><strong className="fs-5">Tour HOT Nước Ngoài</strong></li>
                             <li><a href="#" className={`shadowRed ${selectedLocation === 'Trung Quốc' ? 'selected' : ''}`} onClick={() => handleFilterLocationEnd('Trung Quốc')}>Trung Quốc</a></li>
-                            <li><a href="#" className={`shadowRed ${selectedLocation === 'Thái Lan' ? 'selected' : ''}`} onClick={() => handleFilterLocationEnd('Thái Lan')}>Thái Lan</a></li>
                             <li><a href="#" className={`shadowRed ${selectedLocation === 'Singapore' ? 'selected' : ''}`} onClick={() => handleFilterLocationEnd('Singapore')}>Singapore</a></li>
                             <li><a href="#" className={`shadowRed ${selectedLocation === 'Nhật Bản' ? 'selected' : ''}`} onClick={() => handleFilterLocationEnd('Nhật Bản')}>Nhật Bản</a></li>
                             <li><a href="#" className={`shadowRed ${selectedLocation === 'Châu Âu' ? 'selected' : ''}`} onClick={() => handleFilterLocationEnd('Châu Âu')}>Châu Âu</a></li>
                             <li><a href="#" className={`shadowRed ${selectedLocation === 'Hàn Quốc' ? 'selected' : ''}`} onClick={() => handleFilterLocationEnd('Hàn Quốc')}>Hàn Quốc</a></li>
-                            <li><a href="#" className={`shadowRed ${selectedLocation === 'Bali' ? 'selected' : ''}`} onClick={() => handleFilterLocationEnd('Bali')}>Bali</a></li>
-                            <li><a href="#" className={`shadowRed ${selectedLocation === 'Campuchi' ? 'selected' : ''}`} onClick={() => handleFilterLocationEnd('Campuchi')}>Campuchi</a></li>
-                            <li><a href="#" className={`shadowRed ${selectedLocation === 'Canada' ? 'selected' : ''}`} onClick={() => handleFilterLocationEnd('Canada')}>Canada</a></li>
+                            <li><a href="#" className={`shadowRed ${selectedLocation === 'Campuchia' ? 'selected' : ''}`} onClick={() => handleFilterLocationEnd('Campuchia')}>Campuchia</a></li>
                         </ul>
 
                         <ul className="list-unstyled">
                             <li><strong className="fs-5">Tour HOT Trong Nước</strong></li>
-                            <li><a href="#" className="shadowRed" onClick={() => handleFilterLocationEnd('Hạ Long')}>Hạ Long</a></li>
-                            <li><a href="#" className="shadowRed" onClick={() => handleFilterLocationEnd('Nha Trang')}>Nha Trang</a></li>
-                            <li><a href="#" className="shadowRed" onClick={() => handleFilterLocationEnd('Đà Nẵng')}>Đà Nẵng</a></li>
-                            <li><a href="#" className="shadowRed" onClick={() => handleFilterLocationEnd('Sapa')}>Sapa</a></li>
-                            <li><a href="#" className="shadowRed" onClick={() => handleFilterLocationEnd('Quy Nhơn')}>Quy Nhơn</a></li>
-                            <li><a href="#" className="shadowRed" onClick={() => handleFilterLocationEnd('Phú Yên')}>Phú Yên</a></li>
-                            <li><a href="#" className="shadowRed" onClick={() => handleFilterLocationEnd('Hà Nội')}>Hà Nội</a></li>
-                            <li><a href="#" className="shadowRed" onClick={() => handleFilterLocationEnd('Buôn Mê Thuật')}>Buôn Mê Thuật</a></li>
-                            <li><a href="#" className="shadowRed" onClick={() => handleFilterLocationEnd('Phú Quốc')}>Phú Quốc</a></li>
-                            <li><a href="#" className="shadowRed" onClick={() => handleFilterLocationEnd('Miền Tây')}>Miền Tây</a></li>
+                            <li><a href="#" className={`shadowRed ${selectedLocation === 'Hạ Long' ? 'selected' : ''}`} onClick={() => handleFilterLocationEnd('Hạ Long')}>Hạ Long</a></li>
+                            <li><a href="#" className={`shadowRed ${selectedLocation === 'Nha Trang' ? 'selected' : ''}`} onClick={() => handleFilterLocationEnd('Nha Trang')}>Nha Trang</a></li>
+                            <li><a href="#" className={`shadowRed ${selectedLocation === 'Đà Nẵng' ? 'selected' : ''}`} onClick={() => handleFilterLocationEnd('Đà Nẵng')}>Đà Nẵng</a></li>
+                            <li><a href="#" className={`shadowRed ${selectedLocation === 'Sapa' ? 'selected' : ''}`} onClick={() => handleFilterLocationEnd('Sapa')}>Sapa</a></li>
+                            <li><a href="#" className={`shadowRed ${selectedLocation === 'Quy Nhơn' ? 'selected' : ''}`} onClick={() => handleFilterLocationEnd('Quy Nhơn')}>Quy Nhơn</a></li>
+                            <li><a href="#" className={`shadowRed ${selectedLocation === 'Phú Yên' ? 'selected' : ''}`} onClick={() => handleFilterLocationEnd('Phú Yên')}>Phú Yên</a></li>
+                            <li><a href="#" className={`shadowRed ${selectedLocation === 'Phú Quốc' ? 'selected' : ''}`} onClick={() => handleFilterLocationEnd('Phú Quốc')}>Phú Quốc</a></li>
+                            <li><a href="#" className={`shadowRed ${selectedLocation === 'Miền Tây' ? 'selected' : ''}`} onClick={() => handleFilterLocationEnd('Miền Tây')}>Miền Tây</a></li>
                         </ul>
                     </div>
                     <div className="col-md-9">
@@ -167,7 +162,7 @@ const ListProduct = () => {
                                             <p className="card-text">{tour.date} | {tour.start_day}</p>
                                             <div className="d-flex justify-content-between">
                                                 <p className="card-text text-success">{tour.evaluate}</p>
-                                                <p className="card-text text-warning fs-5">{tour.price_Adult} VNĐ</p>
+                                                <p className="card-text text-warning fs-5">{tour.price_Adult.toLocaleString()} VNĐ</p>
                                             </div>
                                             <div>
                                                 {cart.find(item => item.id === tour.id) ? (

@@ -30,6 +30,7 @@ const Search = () => {
                                     <option value="Châu Âu">Châu Âu</option>
                                     <option value="Nhật Bản">Nhật Bản</option>
                                     <option value="Hàn Quốc">Hàn Quốc</option>
+                                    <option value="Đà Nẵng">Đà Nẵng</option>
                                     {/* Add more options as needed */}
                                 </select>
                             </div>
