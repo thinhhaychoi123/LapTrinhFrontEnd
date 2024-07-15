@@ -7,7 +7,7 @@ import Register from './WebPage/Register';
 import ResetPass from "./WebPage/ResetPass";
 import User from "./WebPage/User";
 import ListCart from './WebPage/ListCart';
-import QuantityInfoCustomer from './WebPage/checkout/QuantityInfoCustomer';
+import QuantityInfo from './WebPage/checkout/QuantityInfo';
 import Booking from './WebPage/checkout/Booking';
 import Payment from './WebPage/checkout/Payment';
 import Checkout from './WebPage/checkout/Checkout';
@@ -23,7 +23,7 @@ function App() {
                     <Route path='/register' element={<Register />}/>  
                     <Route path='/reset' element={<ResetPass />}/>   
                     <Route path='/cart' element={<ListCart/>}/>    
-                    <Route path='/ticket' element={<QuantityInfoCustomer/>}/> 
+                    <Route path='/ticket' element={<QuantityInfo/>}/> 
                     <Route path='/booking' element={<Booking/>}/> 
                     <Route path='/payment' element={<Payment/>}/>     
                     <Route path='/checked' element={<Checkout/>}/>      

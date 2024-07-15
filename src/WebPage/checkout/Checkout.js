@@ -25,8 +25,8 @@ const Checkout = () => {
             </>
             : <>
             <Process step = '6'/>
-                <h1>Bạn đã xác nhận thành công</h1>
-                <h5>Hãy trở về Trang Chủ để xem những tour khác</h5>
+                <h1>Bạn đã xác nhận thành công @</h1>
+                <h5>Hãy trở về Trang Chủ để xem những tour khác !</h5>
             </>
         }
                     <Footer/>

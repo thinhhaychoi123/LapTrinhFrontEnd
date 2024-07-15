@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { FormInputQuantityCustomer } from "../../component/checkout/FormInputQuantityCustomer";
 
-const QuantityInfoCustomer = () => {
+const QuantityInfo = () => {
     const tour = useSelector(state => state.selectTour);
 
     const dispatch = useDispatch();
@@ -41,4 +41,4 @@ const QuantityInfoCustomer = () => {
     </div>);
 };
 
-export default QuantityInfoCustomer;
+export default QuantityInfo;
