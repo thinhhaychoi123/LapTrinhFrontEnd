@@ -19,7 +19,9 @@ const Header = ({ isDarkMode, toggleDarkMode }) => {
     const navigateToLoginPage = () => {
         navigate('/user'); // điều hướng đến đường dẫn '/user'
     };
-
+    const navigatetocart = () =>{
+        navigate('/cart'); // điều hướng đến đường dẫn '/cart'
+    }  
     const handleLogout = () => {
         sessionStorage.removeItem('username'); // Xóa thông tin đăng nhập từ sessionStorage
         localStorage.removeItem('username'); // Xóa thông tin đăng nhập từ localStorage (nếu có)
@@ -73,7 +75,7 @@ const Header = ({ isDarkMode, toggleDarkMode }) => {
                                     </span>
                                 </li>
                             )}
-                            <li className="nav-item">
+                             <li className="nav-item" style={{ cursor: 'pointer' }} onClick={navigatetocart}>
                                 <span className="nav-link text-light fs-4">
                                     <i className="bi bi-cart2 text-light"></i> {cart.length}
                                 </span>

@@ -1,0 +1,21 @@
+{
+    "paymenttype": [
+        {
+            "type": 1,
+            "name": "THANH TOÁN QUA THẺ NỘI ĐỊA",
+            "description": "Thanh toán thông qua thẻ nội địa của bạn"
+        },
+        {
+            "type": 2,
+            "name": "THANH TOÁN QUA THẺ QUỐC TẾ",
+            "description": "Thanh toán thông qua thẻ quốc tế của bạn"
+        },
+        {
+            "type": 3,
+            "name": "THANH TOÁN TRỰC TIẾP",
+            "description": "Thanh toán thông qua văn phòng trực tiếp"
+        }
+
+    ]
+    
+}
