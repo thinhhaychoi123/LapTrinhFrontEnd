@@ -12,8 +12,7 @@ const ResetPassword = () => {
   const handleResetPassword = async (e) => {
     e.preventDefault();
     try {
-      // Replace 'http://localhost:3031/resetpassword' with your actual endpoint
-      await axios.post(`http://localhost:3031/resetpassword`, { email });
+      await axios.post(`http://localhost:3001/resetpassword`, { email });
       toast.success('Password reset email sent successfully.');
     } catch (error) {
       toast.error('Failed to reset password. Please try again.');
