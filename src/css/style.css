@@ -35,10 +35,12 @@ a {
 li {
     margin: 15px 0 15px 10px;
 }
-
+.minText{
+    font-size: 13px;
+}
 
 .dark-mode {
-    background-color: #121212;
+    background-color: #383535;
     color: #ffffff;
 }
 

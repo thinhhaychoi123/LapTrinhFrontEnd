@@ -35,9 +35,9 @@ const HistoryView = () => {
                                         <img src={product.image} className="img-fluid rounded-start" alt={product.name} />
                                     </div>
                                     <div className="col-md-8">
-                                        <div className="card-body p-0">
-                                            <h5 className="card-title fs-6 m-2">{product.name}</h5>
-                                            <p className="card-text fs-6 m-2">{product.date}</p>
+                                        <div className="card-body p-0 shadowBlue">
+                                            <h5 className="card-title minText m-2">{product.name}</h5>
+                                            <p className="card-text minText m-2">{product.date}</p>
                                             <p className="card-text text-primary fs-6 d-flex flex-row-reverse">{product.price_Adult.toLocaleString()} VNĐ</p>
                                         </div>
                                     </div>
