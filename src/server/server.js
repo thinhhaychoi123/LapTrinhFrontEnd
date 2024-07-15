@@ -7,7 +7,7 @@ function Service() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios.get('http://localhost:3031/users')
+        axios.get('http://localhost:3001/users')
             .then(res => setData(res.data))
             .catch(err => {
                 console.log(err);

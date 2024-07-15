@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import Header from "../component/Header";
 import "../css/style.css";
 import Background from "../WebPage/Background";
-import Footer from "./Footer";
+import Footer from "../component/Footer";
 import HistoryView from "./HistoryView";
 import Service from "./Service";
 
@@ -26,7 +26,6 @@ const Home = () => {
                 console.error('Error fetching data:', error);
             }
         };
-
         fetchTours();
     }, []);
 

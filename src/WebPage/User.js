@@ -1,4 +1,4 @@
-import usersData from 'file:///D:/project/LapTrinhFrontEnd-main/src/data/data.json';
+import usersData from '../data/data.json'
 import PropTypes from 'prop-types';
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
