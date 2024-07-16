@@ -22,6 +22,9 @@ const Header = ({ isDarkMode, toggleDarkMode }) => {
     const navigatetocart = () =>{
         navigate('/cart'); // điều hướng đến đường dẫn '/cart'
     }  
+    const navigatetohistory = () =>{
+        navigate('/history'); // điều hướng đến đường dẫn '/history'
+    }  
     const handleLogout = () => {
         sessionStorage.removeItem('username'); // Xóa thông tin đăng nhập từ sessionStorage
         localStorage.removeItem('username'); // Xóa thông tin đăng nhập từ localStorage (nếu có)
@@ -80,6 +83,15 @@ const Header = ({ isDarkMode, toggleDarkMode }) => {
                                     <i className="bi bi-cart2 text-light"></i> {cart.length}
                                 </span>
                             </li>
+                            {username ? (
+                                <>
+                                    <li className="nav-item" style={{ cursor: 'pointer' }} onClick={navigatetohistory}>
+                                        <i className="bi bi-journal-text text-light fs-3"></i>
+                                    </li>
+                                </>
+                            ) : (
+                                <></>
+                            )}
                             <li className="nav-item">
                                 <label className="switch">
                                     <input type="checkbox" onChange={toggleDarkMode} checked={isDarkMode} />

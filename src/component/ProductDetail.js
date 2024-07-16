@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Header from './Header';
 import HistoryView from "../WebPage/HistoryView";
-import Footer from "../WebPage/Footer";
+import Footer from "../component/Footer";
 
 
 const ProductDetail = () => {

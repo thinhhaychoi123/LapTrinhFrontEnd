@@ -11,6 +11,7 @@ import QuantityInfo from './WebPage/checkout/QuantityInfo';
 import Booking from './WebPage/checkout/Booking';
 import Payment from './WebPage/checkout/Payment';
 import Checkout from './WebPage/checkout/Checkout';
+import HistoryCart from './WebPage/HistoryCart';
 function App() {
     return (
         <BrowserRouter>
@@ -26,7 +27,8 @@ function App() {
                     <Route path='/ticket' element={<QuantityInfo/>}/> 
                     <Route path='/booking' element={<Booking/>}/> 
                     <Route path='/payment' element={<Payment/>}/>     
-                    <Route path='/checked' element={<Checkout/>}/>      
+                    <Route path='/checked' element={<Checkout/>}/>
+                    <Route path='/history' element={<HistoryCart/>}/> 
                 </Routes>
             </div>
         </BrowserRouter>

@@ -3,10 +3,11 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import Header from "../component/Header";
 import "../css/style.css";
+import { useParams } from "react-router-dom";
 
 const ResetPassword = () => {
   const [Email, setEmail] = useState('');
-  const { token } = useParams();
+  const { token } = useParams();  
 
   const handleResetPassword = async (e) => {
     e.preventDefault();
