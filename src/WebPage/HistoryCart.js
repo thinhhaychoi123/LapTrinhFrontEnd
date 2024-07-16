@@ -12,8 +12,7 @@ const HistoryCart = () => {
     useEffect(() => {
         const storedUsername = sessionStorage.getItem('username') || localStorage.getItem('username');
         if (!storedUsername) {
-            alert("Bạn phải đăng nhập để xem thanh toán");
-            navigate(`/user`); //Điều dẫn về /user, buộc người dùng phải đăng nhập trước
+            navigate(`/user`); //Dẫn user về login, nếu chưa đăng nhập
             return;
         }
     }, [navigate]);
