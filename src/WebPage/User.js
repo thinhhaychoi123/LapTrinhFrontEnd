@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useDispatch } from 'react-redux';
 import Header from "../component/Header";
 import "../css/style.css";
+import UserData from '../data/userdata.json'
 
 const Login = () => {
     const [username, setUsername] = useState('');
@@ -13,6 +15,7 @@ const Login = () => {
     const [errorMessage, setErrorMessage] = useState('');
 
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     useEffect(() => {
         try {
@@ -25,6 +28,17 @@ const Login = () => {
         }
     }, []);
 
+    const handleRemoveFromCart = (tourId) => {
+        dispatch({ type: 'cart.removebyid', payload: { product: tourId } });
+    };
+
+    const clearDataCart = (user_id) => {
+        UserData.checkout.map(cart => {
+            if(user_id == cart.userId){//Nếu đã thấy data checkout
+                handleRemoveFromCart(cart.tourId);//Xóa các tour trong giỏ hàng nếu tour này đã đặt
+            }
+        });
+    }
     const ProceedLogin = (e) => {
         e.preventDefault();
         if (validate()) {
@@ -39,12 +53,14 @@ const Login = () => {
                     console.log('Login successful for:', user.username || user.name);
                     toast.success('Login successful.');
                     try {
-                        sessionStorage.setItem('username', user.username || user.name);
+                        sessionStorage.setItem('id_user', user.id); //Đặt giá trị id vào sessionStorage, dùng cho mua tour sau này
+                        sessionStorage.setItem('username', user.username || user.name);//Đặt giá trị tên của user vào sessionStorage
                     } catch (error) {
                         console.error('Failed to save username to sessionStorage:', error);
                     }
                     setLoggedInUsername(user.username || user.name);
                     setErrorMessage('');
+                    clearDataCart(user.id);//Xóa dữ liệu cart đã đặt trước
                     navigate('/');
                 } else {
                     console.log('Incorrect password for:', user.username || user.name);
@@ -57,6 +73,7 @@ const Login = () => {
 
     const handleLogout = () => {
         try {
+            sessionStorage.removeItem('id_user');
             sessionStorage.removeItem('username');
         } catch (error) {
             console.error('Failed to remove username from sessionStorage:', error);

@@ -8,14 +8,19 @@ import Background from "../WebPage/Background";
 import Footer from "../component/Footer";
 import HistoryView from "./HistoryView";
 import Service from "./Service";
+import UserData from '../data/userdata.json'
 
 const Home = () => {
+    const [filters_userdata, setFiltersUserData] = useState([]);
     const [tours, setTours] = useState([]);
     const [isDarkMode, setIsDarkMode] = useState(false);
     const dispatch = useDispatch();
     const [currentPage, setCurrentPage] = useState(1);
     const [toursPerPage] = useState(10);
     const cart = useSelector(state => state.cart);
+
+    const checkoutlist = UserData.checkout;
+    const id = sessionStorage.getItem('id_user');
 
     useEffect(() => {
         const fetchTours = async () => {
@@ -28,6 +33,16 @@ const Home = () => {
         };
         fetchTours();
     }, []);
+
+    useEffect(() => {
+        
+        if(id){
+        const filterlist = checkoutlist.filter(list => {
+            return id == list.userId;
+        });
+        setFiltersUserData(filterlist);
+        }
+    },[checkoutlist]);
 
     // Pagination logic
     const indexOfLastTour = currentPage * toursPerPage;
@@ -48,6 +63,12 @@ const Home = () => {
     const toggleDarkMode = () => {
         setIsDarkMode(!isDarkMode);
     };
+
+    const isTourBookFromUser = (tour) => {
+        return filters_userdata.find(e => {
+            return tour.id == parseInt(e.tourId);
+        });
+    }
 
     return (
         <div className={isDarkMode ? 'dark-mode' : ''}>
@@ -71,13 +92,21 @@ const Home = () => {
                                     </div>
                                 </Link>
                                 <div className="card-footer">
-                                    {cart.find(item => item.id === tour.id) ? (
+                                    {isTourBookFromUser(tour) ? 
+                                                (
+                                                <button
+                                                    type="button"
+                                                    className="btn btn-success"
+                                                >Đã đặt</button>
+                                                
+                                                ) : (
+                                    cart.find(item => item.id === tour.id) ? (
                                         <button
                                             type="button"
                                             className="btn btn-danger"
                                             onClick={() => handleRemoveFromCart(tour)}
                                         >
-                                            Remove from Cart
+                                            Xóa sản phẩm
                                         </button>
                                     ) : (
                                         <button
@@ -85,9 +114,10 @@ const Home = () => {
                                             className="btn btn-warning"
                                             onClick={() => handleAddToCart(tour)}
                                         >
-                                            Add to Cart
+                                            Thêm vào giỏ
                                         </button>
-                                    )}
+                                    )
+                                )}
                                 </div>
                             </div>
                         </div>

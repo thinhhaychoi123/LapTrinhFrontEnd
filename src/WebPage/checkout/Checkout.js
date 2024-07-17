@@ -4,9 +4,12 @@ import Header from '../../component/Header';
 import Footer from '../../component/Footer';
 import { useSelector,useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 
 const Checkout = () => {
     const [isChecked, setIsChecked] = useState(false);
+
+
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const checkout = useSelector(state => state.checkout);
@@ -17,12 +20,49 @@ const Checkout = () => {
             navigate(`/user`); //Dẫn user về login, nếu chưa đăng nhập
             return;
         }
+        
     }, [navigate]);
+    console.log(checkout.quantityAdult);
+    const onHandleAddTour = (datatour) => {
+        const id = sessionStorage.getItem('id_user');
+        if(!id){
+            alert("Bạn đã đăng xuất, vui lòng trở về và đăng nhập lại")
+            return;
+        }
+        const userId = id;
+        const tourId = datatour.id;
+        const quantityAdult = datatour.quantityAdult;
+        const quantityChild = datatour.quantityChild;
+        const total_price = datatour.total_price;
+        const payment_method = datatour.payment_method;
+        const passenger_details =  datatour.passenger_details
+        const newTour = { userId,tourId, quantityAdult, quantityChild, total_price, payment_method, passenger_details };
+        sendToCheckoutData(newTour);
+    }
+    const sendToCheckoutData = (data) => {
+        const id = uuidv4();
+        fetch("http://localhost:3002/checkout", {
+            method: "POST",
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        })
+        .then(response => {
+            if (response.ok) {
+                console.log("Gửi lên nhóm thanh toán thành công")
+                dispatch({ type: 'cart.remove', payload: { product: checkout.tour } });
+                setIsChecked(true);
+            } else {
+                throw new Error('Failed to checkout');
+            }
+        })
+        .catch(error => {
+            console.log("Lỗi khi thanh toán")
+        });
+    }
+
+
     const onClickBuy = () => {
-        dispatch({ type: 'cart.remove', payload: { product: checkout.tour } });
-        dispatch({type: 'buycart.remove', payload: { product: checkout.tour }});
-        dispatch({type: 'buycart.add', payload: { product: checkout }});
-        setIsChecked(true);
+        onHandleAddTour(checkout);
     }
     
     return (<div>

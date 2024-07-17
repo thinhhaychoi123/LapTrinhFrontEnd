@@ -6,7 +6,6 @@ import { combineReducers } from '@reduxjs/toolkit';
 const initialProductsState = [];
 const initialCartState = checkCart();
 const initialSelectCart = checkSelect();
-const initialSelectCartBrought = checkCartBrought();
 const initialSelectCheckout = checkCheckout();
 
 //Phần reducer
@@ -42,6 +41,10 @@ const cartReducer = (state = initialCartState, action) => {
             const updatedCart = state.filter(p => p.id !== action.payload.product.id);
             saveCart(updatedCart);
             return updatedCart;
+        case 'cart.removebyid':
+            const updatedCartByID = state.filter(p => p.id !== action.payload.product);
+            saveCart(updatedCartByID);
+            return updatedCartByID;  
         default:
             return state;
     }
@@ -52,7 +55,6 @@ const selectReducer = (state = initialSelectCart, action) => {
             const select = action.payload;
             saveSelector(select);
             return select;
-          
         default:
             return state;
     }
@@ -89,28 +91,13 @@ const checkoutReducer = (state = initialSelectCheckout, action) => {
             return state;
     }
 }
-
-const cartBoughtReducer = (state = initialSelectCartBrought, action) => {
-    switch (action.type) {
-        case 'buycart.add':
-            const newCart = [...state, action.payload.product];
-            saveBoughtCart(newCart);
-            return newCart;
-        case 'buycart.remove':
-            const updatedCart = state.filter(p => p.tour.id !== action.payload.product.id);
-            saveBoughtCart(updatedCart);
-            return updatedCart;
-        default:    
-            return state;
-    }
-};  
+ 
 
 const rootReducer = combineReducers({
     products: productsReducer,
     cart: cartReducer,
     selectTour: selectReducer,
-    checkout: checkoutReducer,
-    boughtcart: cartBoughtReducer
+    checkout: checkoutReducer
 });
 
 //Phần lấy dữ liệu, từ tring localStorage chủ yếu
@@ -121,25 +108,18 @@ function checkCart() {
 }
 
 function checkSelect(){
-    const select = JSON.parse(localStorage.getItem('selectid'));
+    const select = JSON.parse(sessionStorage.getItem('selectid'));
     if(!select){
         return '';
     }
     return select;
 }
 function checkCheckout(){
-    const select = JSON.parse(localStorage.getItem('checkout'));
+    const select = JSON.parse(sessionStorage.getItem('checkout'));
     if(!select){
         return '';
     }
     return select;
-}
-function checkCartBrought(){
-    const cart = JSON.parse(localStorage.getItem('boughtcart'));
-    if (!Array.isArray(cart)) {
-        return [];
-    }
-    return cart
 }
 
 //Phần Save
@@ -149,15 +129,12 @@ function saveCart(cart) {
 }
 
 function saveSelector(id){
-    localStorage.setItem('selectid', JSON.stringify(id));
+    sessionStorage.setItem('selectid', JSON.stringify(id));
 }
 
 function saveCheckout(data){
-    localStorage.setItem('checkout', JSON.stringify(data));
+    sessionStorage.setItem('checkout', JSON.stringify(data));
 
-}
-function saveBoughtCart(cart){
-    localStorage.setItem('boughtcart', JSON.stringify(cart));
 }
 
 
