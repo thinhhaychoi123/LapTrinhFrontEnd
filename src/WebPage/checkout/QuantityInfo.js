@@ -8,7 +8,6 @@ import { useEffect } from "react";
 
 const QuantityInfo = () => {
     const tour = useSelector(state => state.selectTour);
-
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -34,7 +33,7 @@ const QuantityInfo = () => {
             dispatch({type: 'checkout.setcheckout', payload: data });
             navigate(`/booking`);
         } catch {
-            console.error("Loi khi tam luu");
+            console.error("Lỗi khi lưu lại");
         }
     }
 

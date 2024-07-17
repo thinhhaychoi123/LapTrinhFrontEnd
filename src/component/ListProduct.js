@@ -6,8 +6,10 @@ import Search from "./Search";
 import { Link } from "react-router-dom";
 import "../css/style.css";
 import Header from "./Header";
+import UserData from '../data/userdata.json'
 
 const ListProduct = () => {
+    const [filters_userdata, setFiltersUserData] = useState([]);
     const [tours, setTours] = useState([]);
     const [locationEnd, setLocationEnd] = useState('');
     const [sortBy, setSortBy] = useState(null);
@@ -25,6 +27,8 @@ const ListProduct = () => {
     const cart = useSelector(state => state.cart);
     const location = useLocation();
     const navigate = useNavigate();
+    
+    const checkoutlist = UserData.checkout;
 
     useEffect(() => {
         const fetchTours = async () => {
@@ -47,7 +51,15 @@ const ListProduct = () => {
             startDate: params.get('startDate') || ''
         });
     }, [location.search]);
-
+    useEffect(() => {
+        const id = sessionStorage.getItem('id_user');
+        if(id){
+        const filterlist = checkoutlist.filter(list => {
+            return id == list.userId;
+        });
+        setFiltersUserData(filterlist);
+        }
+    },[checkoutlist]);
     const handleAddToCart = (tour) => {
         dispatch({ type: 'cart.add', payload: { product: tour } });
     };
@@ -97,6 +109,12 @@ const ListProduct = () => {
         // Redirect to ListProduct with search params
         navigate(`/list?location=${filters.location}&start=${filters.start}&startDate=${filters.startDate}&search=${searchTerm}`);
     };
+
+    const isTourBookFromUser = (tour) => {
+        return filters_userdata.find(e => {
+            return tour.id == parseInt(e.tourId);
+        });
+    }
 
     const filteredTours = getFilteredTours();
     const sortedTours = sortTours(filteredTours);
@@ -165,7 +183,17 @@ const ListProduct = () => {
                                                 <p className="card-text text-warning fs-5">{tour.price_Adult.toLocaleString()} VNĐ</p>
                                             </div>
                                             <div>
-                                                {cart.find(item => item.id === tour.id) ? (
+                                                {
+                                                isTourBookFromUser(tour) ? 
+                                                (
+                                                <button
+                                                    type="button"
+                                                    className="btn btn-success"
+                                                >Đã đặt</button>
+                                                
+                                                ) : (
+                                                
+                                                cart.find(item => item.id === tour.id) ? (
                                                     <button
                                                         type="button"
                                                         className="btn btn-danger"
@@ -179,9 +207,10 @@ const ListProduct = () => {
                                                         className="btn btn-warning"
                                                         onClick={() => handleAddToCart(tour)}
                                                     >
-                                                        Thêm vào giỏ hàng
+                                                        Thêm vào giỏ
                                                     </button>
-                                                )}
+                                                )
+                                            )}
                                             </div>
                                             <Link to={`/product/${tour.id}`} className="btn btn-primary">Chi tiết</Link>
                                         </div>

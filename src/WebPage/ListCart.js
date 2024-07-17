@@ -27,6 +27,10 @@ const ListCart = () => {
         dispatch(selectTourMethod(tour));
         navigate(`/ticket`);
     };
+    const handleRemoveFromCart = (tour) => {
+        dispatch({ type: 'cart.remove', payload: { product: tour } });
+    };
+
     return (<div>
         <Header/>
         <h2 className="mb-4">Giỏ hàng cần thanh toán</h2>
@@ -46,6 +50,7 @@ const ListCart = () => {
                            </div>
                            <div>
                            <button className="btn btn-primary" onClick={() => handleSelectCart(tour)}>Thanh toán</button>
+                           <button className="btn btn-danger" onClick={() => handleRemoveFromCart(tour)}>Xóa khỏi giỏ</button>
                            </div>
                        </div>
                    </div>

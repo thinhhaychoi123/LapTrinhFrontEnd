@@ -26,6 +26,7 @@ const Header = ({ isDarkMode, toggleDarkMode }) => {
         navigate('/history'); // điều hướng đến đường dẫn '/history'
     }  
     const handleLogout = () => {
+        sessionStorage.removeItem('id_user');//Xóa user id
         sessionStorage.removeItem('username'); // Xóa thông tin đăng nhập từ sessionStorage
         localStorage.removeItem('username'); // Xóa thông tin đăng nhập từ localStorage (nếu có)
         setUsername(''); // Clear username state
