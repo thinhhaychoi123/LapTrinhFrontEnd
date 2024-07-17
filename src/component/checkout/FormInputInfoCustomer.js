@@ -89,7 +89,7 @@ export const FormInputInfoCustomer = (total) => {
                                     <div className="form-group">
                                         <label>Số điện thoại:</label>
                                         <input
-                                            type="number"
+                                            type="text"
                                             className="form-control"
                                             id={`phone-${i}`}
                                             placeholder="Nhập số điện thoại"
@@ -106,7 +106,7 @@ export const FormInputInfoCustomer = (total) => {
     
 return (<>
     {forms}
-    <div className="btn btn-block btn-continue-booking rounded" color='RED' onClick={handleSave}>Tiếp tục</div>
+    <button className = "btn btn-primary" onClick={handleSave}>Tiếp tục</button>
 </>);
 
 

@@ -35,7 +35,7 @@ const ListCart = () => {
         <Header/>
         <h2 className="mb-4">Giỏ hàng cần thanh toán</h2>
             {cart.map(tour => (
-               <div key={tour.id} className="card mb-3 hsshadow" style={{ maxWidth: '800px' }}>
+               <div key={tour.id} className="card mb-3 hsshadow" style={{ maxWidth: '1000px' }}>
                <div className="row g-0">
                    <div className="col-md-4 d-flex">
                        <img src={tour.image} className="img-fluid rounded-start" alt={tour.name} />

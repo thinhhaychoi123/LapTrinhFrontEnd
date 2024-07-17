@@ -1,4 +1,219 @@
 {
-  "checkout": [],
+  "checkout": [
+    {
+      "id": "7d05",
+      "userId": "d350",
+      "tourId": "1",
+      "tour": {
+        "id": "1",
+        "name": "Tour Bình Hưng 2N2Đ: Ninh Chữ - Vịnh Vĩnh Hy - Ngắm San Hô - BBQ Hải Sản",
+        "image": "https://cdn2.ivivu.com/2021/03/04/10/ivivu-vinh-hy-bia-360x225.gif",
+        "image_introduce": "https://cdn2.ivivu.com/2021/03/04/10/ivivu-vinh-hy-bia-750x420.gif",
+        "catagory_Id": 1,
+        "area_Id": 2,
+        "date": "2 ngày, 2 đêm",
+        "location_Start": "Thành phố Hồ Chí Minh",
+        "location_End": "Nha Trang",
+        "price_Adult": 18900000,
+        "price_Childern": 1417500,
+        "evaluate": "9.2 Tuyệt vời",
+        "start_day": "2024-07-12",
+        "description": {
+          "title": "Chạm tay đến Maldives Việt Nam",
+          "content": "Khám phá Bình Hưng, một viên ngọc ẩn giấu của Nha Trang với bãi biển trong xanh, hang đá nước ngọt độc đáo và san hô đẹp mắt. Thưởng thức hải sản tươi ngon, trong đó có tôm hùm trứ danh, và trải nghiệm cuộc sống đảo qua chương trình BBQ hải sản. Hành trình từ Ninh Chữ đến Vịnh Vĩnh Hy, ngắm san hô bằng tàu đáy kính và tham gia nhiều hoạt động vui vẻ khác. Cùng iVIVU khám phá ngay hôm nay!"
+        },
+        "detail": [
+          {
+            "id": 1,
+            "name": "TỐI NGÀY 01: TP. HCM -  ĐẢO BÌNH HƯNG",
+            "route": [
+              {
+                "time": "20h00: Xe và HDV đón khách tại điểm hẹn, Đoàn khởi hành đi Ninh Chữ - Vịnh Vĩnh Hy. Nghỉ đêm trên xe.",
+                "description": "Điểm đón 1: Cây xăng số 14 (đối diện Bến xe Miền Tây ( có chỗ gửi xe)",
+                "image": ""
+              },
+              {
+                "time": "",
+                "description": "Điểm đón 2: Ngã 4 an sương, N4 Ga (không có chỗ gửi xe)",
+                "image": ""
+              },
+              {
+                "time": "",
+                "description": "Điểm đón 3: Trạm xăng dầu Nhơn Hoà, 520 Quốc lộ 13, Hiệp Bình Phước, Thủ Đức, cách bến xe miền đông 800m.",
+                "image": ""
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "name": "NGÀY 01: VỊNH VĨNH HY - NGẮM SAN HÔ - BÌNH HƯNG (ĂN SÁNG, TRƯA, TỐI)",
+            "route": [
+              {
+                "time": "Buổi sáng",
+                "description": "07h00: Đoàn lên tàu đáy kính đi tham quan vịnh Vĩnh Hy - Ngắm nhìn rừng san hô và đời sống sinh vật biển phong phú qua đáy kính trong suốt. Ngoài ra, có cơ hội tắm tại bãi biển Bà Điên, với làn sóng nhẹ và nước biển trong xanh.",
+                "image": "https://cdn2.ivivu.com/2019/03/05/17/ivivu-vinh-vinh-hy.jpg"
+              },
+              {
+                "time": "Buổi chiều",
+                "description": "10h00: Tàu đưa đoàn trở về đất liền. Tiếp tục đến với Đảo Bình Hưng, xe đưa quý khách qua cung đường ven biển mới tuyệt đẹp.",
+                "image": "https://cdn2.ivivu.com/2023/06/08/16/ivivu-binh-hung-bia.jpg"
+              },
+              {
+                "time": "Buổi tối",
+                "description": "Tàu đưa quý khách về lại đảo, Quý khách vệ sinh cá nhân. Đoàn tham gia bữa tiệc hải sản Tôm Hùm trên bè. Thực đơn: Tôm hùm ½ con/người, Cá Giò hoặc cá Bò nướng cuốn bánh tráng + Rau sống, Ốc mặt trăng hấp, Mực nướng sate chấm tương xanh,  Sò nướng mỡ hành, Lẩu hải sản, Trà Đá.",
+                "image": "https://cdn2.ivivu.com/2016/09/05/10/ivivu-binh-ba-2n2d-kham-pha-dao-tom-hum-tom-hum1.jpg"
+              }
+            ]
+          },
+          {
+            "id": 3,
+            "name": "NGÀY 2: ĐỒI CỪU - VƯỜN NHO - TP. HCM (ĂN SÁNG, TRƯA)",
+            "route": [
+              {
+                "time": "Buổi sáng",
+                "description": "08h30: Trả phòng tạm biệt đảo Bình Hưng, lên tàu về lại đất liền. Tham quan Đồi Cừu Suối Tiên là khu sinh thái mới, mang vẻ đẹp tự nhiên như nông trại cừu cổ tích châu Âu, với không gian xanh rộng lớn. (tự túc)",
+                "image": "https://cdn2.ivivu.com/2023/04/25/15/ivivu-bai-trung-binh-hung-.jpg"
+              },
+              {
+                "time": "Buổi chiều",
+                "description": "Đoàn dùng cơm trưa tại nhà hàng Cà Ná. Tiếp tục hành trình về TP.HCM, trên đường về xe dừng chân tham quan và mua sắm đặc sản của từng địa phương như: nho, tỏi, nước mắm,...",
+                "image": "https://cdn2.ivivu.com/2019/12/11/14/ivivu-vuon-nho-ninh-thuan.gif"
+              },
+              {
+                "time": "Buổi tối",
+                "description": "19h00: Về đến TP.HCM xe đưa đoàn về điểm hẹn. Kết thúc tour đảo Bình Hưng.",
+                "image": ""
+              }
+            ]
+          }
+        ]
+      },
+      "quantityAdult": 1,
+      "quantityChild": 0,
+      "total_price": 18900000,
+      "payment_method": "2",
+      "passenger_details": [
+        {
+          "full_name": "Võ văn toàn",
+          "email": "alotruong@gmail.com",
+          "phone": "0236585412"
+        }
+      ]
+    },
+    {
+      "id": "fb57",
+      "userId": "d350",
+      "tourId": "10",
+      "tour": {
+        "id": "10",
+        "name": "Tour Nga 7N6Đ: Hà Nội - Moscow - Saint Peterburg - Quần Thể Quảng Trường Đỏ",
+        "image": "https://cdn2.ivivu.com/2024/06/18/12/ivivu-toa-thanh-basil-nga-1-246x232.jpg",
+        "image_introduce": "https://cdn2.ivivu.com/2024/03/20/16/ivivu-den-kazan-xem-world-cup-ivivu-2-750x420.jpg",
+        "catagory_Id": 2,
+        "area_Id": 5,
+        "date": "7 ngày, 6 đêm",
+        "location_Start": "Hà Nội",
+        "location_End": "Châu Âu",
+        "price_Adult": 48500000,
+        "price_Childern": 41330000,
+        "evaluate": "8.0 Rất tốt",
+        "start_day": "2024-08-12",
+        "description": {
+          "title": "Tour Nga 7N6Đ: Hà Nội - Moscow - Saint Peterburg - Quần Thể Quảng Trường Đỏ",
+          "content": "Khám phá Nga trong 7 ngày 6 đêm, khởi hành từ Hà Nội, tham quan các thành phố nổi tiếng Moscow và Saint Petersburg. Tham quan Quần thể Quảng trường Đỏ, Điện Kremlin, Cung điện Mùa Đông và Nhà thờ Thánh Isaac. Trải nghiệm văn hóa, lịch sử phong phú của Nga qua các di tích, bảo tàng và kiến trúc đặc sắc. Tour lý tưởng cho du khách muốn tận hưởng kỳ nghỉ dài ngày với nhiều trải nghiệm thú vị và khám phá những điểm đến nổi bật của nước Nga. Cùng iVIVU khám phá ngay hôm nay! "
+        },
+        "detail": [
+          {
+            "id": 1,
+            "name": "NGÀY 01: HÀ NỘI - MOSCOW (ĂN TRÊN MÁY BAY)",
+            "route": [
+              {
+                "time": "04h30: Xe ô tô và hướng dẫn đón Quý khách tại Rạp xiếc thành phố Hà Nội và đưa ra sân bay Nội Bài, đáp chuyến bay đi Moscow (Đoàn quá cảnh tại sân bay Quốc tế Quảng Châu)",
+                "description": "Cả đoàn tập trung lúc 13h00: Đoàn ra cửa máy bay nối chuyến bay MU591 đi Moscow (lúc 13h55; ăn trưa trên máy bay) .19h15: Đến Sân bay Quốc tế Moscow Sheremetyevo (SVO), đoàn làm thủ tục nhập cảnh, xe đón đoàn đến nhà hàng ăn tối. Chụp ảnh Moscow khi lên đèn lung linh kì ảo.",
+                "image": ""
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "name": "NGÀY 02: MOSCOW - SAINT PETERSBUR -TÀU HỎA (ĂN BA BỮA)",
+            "route": [
+              {
+                "time": "Sáng: Ăn sáng tại khách sạn. ",
+                "description": "Đoàn bắt đầu tour khám phá điểm tham quan nổi tiếng và là niềm tự hào nước nga đó là quần thể du lịch Quảng Trường Đỏ",
+                "image": "https://cdn2.ivivu.com/2024/02/28/14/ivivu-quang-truong-do-moscow-nga.jpg"
+              }
+            ]
+          },
+          {
+            "id": 3,
+            "name": "NGÀY 3: SAINT PETERSBURG (ĂN BA BỮA) ",
+            "route": [
+              {
+                "time": "Sáng: Tàu đến Saint Peterburg, xe đưa đoàn đi ăn sáng. Xe đưa đoàn tham quan một vòng Saint PeterBurg thành phố đệ nhất di sản với những điểm du lịch đẹp: Đài tưởng niệm Nữ hoàng Catherine Đại Đế, quảng trường Cung điện, tòa nhà trụ sở Bộ Tổng tham mưu, cột đá Alexander, khu vườn Alexander, quảng trường Senate, đảo Vaxiliev, trường Đại học tổng hợp Saint PetersBurg.....Chụp hình Chiến hạm Rạng Đông.",
+                "description": "Quý khách tham quan Cung điện Mùa Đông ở Saint Petersburg - là nơi ở của triều đình Nga từ thế kỷ 18 đến đầu thế kỷ 20, là một trong năm tòa nhà thuộc Bảo tàng di sản quốc gia Hermitage hiện nay. Bảo tàng Hermitage được thành lập năm 1764, là bảo tàng đứng thứ hai trên thế giới, chỉ sau Viện bảo tàng Louvre ở Pháp. ",
+                "image": "https://cdn2.ivivu.com/2016/08/25/16/ivivu-tour-nga-9n8d-moscow-saint-petersburg-cung-dien-mua-dong.jpg"
+              }
+            ]
+          },
+          {
+            "id": 4,
+            "name": "NGÀY 04: SAINT PETERSBUR-CUNG ĐIỆN MÙA HÈ- CUNG ĐIỆN MÙA THU (3 BỮA)",
+            "route": [
+              {
+                "time": "Ăn sáng tại khách sạn Đoàn khởi hành đi đến thành phố Pushkin - ngôi làng của các vị hoàng đế, đây là một trong những thị trấn tuyệt đẹp nằm cách thủ đô phương Bắc 24 km về phía nam.",
+                "description": "Tham quan Cung điện Mùa Thu - (Catherine Palace): Niềm tự hào muôn đời của kiến trúc Nga - Ekaterina là biểu tượng cho sự xa hoa của chế độ Nga hoàng, được xếp hạng một trong những cung điện lộng lẫy và nguy nga nhất thế giới. Cung điện có căn phòng được xem như là kỳ quan thứ tám của nhân loại với nguyên liệu là Hổ phách mà vào thế kỷ XVIII, nó đắt hơn vàng gấp mười hai lần.",
+                "image": "https://cdn2.ivivu.com/2024/02/07/11/cung-dien-catherine-ivv.gif"
+              }
+            ]
+          },
+          {
+            "id": 5,
+            "name": "NGÀY 05: SAINT PETERSBUR - MOSCOW - TÀU SAP SAN ( ĂN 3 BỮA)",
+            "route": [
+              {
+                "time": "",
+                "description": "Đoàn ăn sáng, sau đó xe đưa đoàn tham quan Nhà thờ Saint Issac – nơi thờ vị Thánh hộ mệnh của Pie Đại đế - người đã sáng lập ra thành phố Saint PetersBurg Nhà thờ Thượng Huyết (The Church of the Savior on Blood) là một công trình kiến trúc nổi tiếng tại thành phố St. Petersburg được xây dựng vào cuối thế kỷ 19 và đầu thế kỷ 20.",
+                "image": "https://cdn2.ivivu.com/2024/02/28/16/ivivu-nha-tho-saint-issac-nga.jpg"
+              }
+            ]
+          },
+          {
+            "id": 6,
+            "name": "NGÀY 06: MOSCOW - LÊN MÁY BAY ( ĂN 2 BỮA/1 MÁY BAY)",
+            "route": [
+              {
+                "time": "",
+                "description": "Đoàn ăn sáng. Đoàn đi bộ thăm Điện Kremlin thu nhỏ - khu chợ Vernhisaz được gọi là Kremli ở Izmailovo. Du khách có thể tìm mua rất nhiều món đồ mang đậm nét văn hoá Nga ở đây, từ búp bê matreshka đến những máy hát cổ, từ những chiếc đồng hổ cổ đến những bức tranh đậm nét hội họa Nga. Vernisadj bán đủ các thứ đồ lưu niệm, thủ công, đồ cổ, các tác phẩm nghệ thuật. ",
+                "image": "https://cdn2.ivivu.com/2024/03/20/16/ivivu-dien-kremlin-lzmailovo.jpg"
+              }
+            ]
+          },
+          {
+            "id": 7,
+            "name": "NGÀY 7: VỀ HÀ NỘI.",
+            "route": [
+              {
+                "time": "Chuyến bay về Hà Nội: CAN HAN CZ 8315 1340 1445",
+                "description": "13h00: Đoàn ra cửa máy bay đển về đến Việt Nam 14h45 máy bay hạ cánh tại Hà Nội kết thúc chương trình, chia tay hẹn gặp lại Quý khách.",
+                "image": ""
+              }
+            ]
+          }
+        ]
+      },
+      "quantityAdult": 1,
+      "quantityChild": 6,
+      "total_price": 296480000,
+      "payment_method": "2",
+      "passenger_details": [
+        {
+          "full_name": "Võ văn toàn",
+          "email": "alotruong@gmail.com",
+          "phone": "0236585412"
+        }
+      ]
+    }
+  ],
   "history": []
 }

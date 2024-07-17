@@ -5,6 +5,7 @@ import { Process } from "../../component/Process";
 import { useNavigate } from "react-router-dom";
 import { FormInputQuantityCustomer } from "../../component/checkout/FormInputQuantityCustomer";
 import { useEffect } from "react";
+import { ItemSeenCheckout } from "../../component/checkout/ItemSeenCheckout";
 
 const QuantityInfo = () => {
     const tour = useSelector(state => state.selectTour);
@@ -41,9 +42,8 @@ const QuantityInfo = () => {
     <div>
         <Header/>
         <Process step = '2'/>
-        
-        <h1>Tên tour names: {tour.name}</h1>
-            <FormInputQuantityCustomer tour = {tour} handleContinue = {handleContinue} />
+        <ItemSeenCheckout datatour = {tour} process={false}/>
+        <FormInputQuantityCustomer tour = {tour} handleContinue = {handleContinue} /> 
         <Footer/>
     </div>);
 };

@@ -1,13 +1,10 @@
 import UserData from '../data/userdata.json'
 import React ,{useEffect,useState} from 'react';
-import { useDispatch } from 'react-redux';
 import { useNavigate } from "react-router-dom";
 import Footer from "../component/Footer";
 import Header from "../component/Header";
-import axios from 'axios';
 
 const HistoryCart = () => {
-    const [tours, setTours] = useState([]);
     const [filters_data, setFiltersData] = useState([]);
     const navigate = useNavigate();
     const checkoutlist = UserData.checkout;
@@ -19,17 +16,6 @@ const HistoryCart = () => {
         }
     }, [navigate]);
     useEffect(() => {
-        const fetchTours = async () => {
-            try {
-                const response = await axios.get('http://localhost:3001/tour');
-                setTours(response.data); // Set fetched data into state
-            } catch (error) {
-                console.error('Error fetching data from API:', error);
-            }
-        };
-        fetchTours();
-    }, []);
-    useEffect(() => {
         const loadData = () => {
         const id = sessionStorage.getItem('id_user');
         const filterlist = checkoutlist.filter(list => {
@@ -38,14 +24,9 @@ const HistoryCart = () => {
         setFiltersData(filterlist);
         };
         loadData();
-    });
+    },[setFiltersData]);
 
-    const deleteDataByTourId = async (tourId) => {
-        const find = filters_data.find(cart => cart.tourId == tourId);
-        if(!find){
-            return;
-        }
-        const iddata = find.id;
+    const deleteDataByTourId = async (iddata) => {
         fetch("http://localhost:3002/checkout/"+iddata, {
             method: "DELETE"
         })
@@ -61,32 +42,28 @@ const HistoryCart = () => {
         });
     }
 
-    const isFindTour = (from) => {
-        return filters_data.find(e => {
-            return from.id == parseInt(e.tourId);
-        });
-    }
     return (<div>
         <Header/>
         <h2 className="mb-4">Đã thanh toán</h2>
              {
-                tours.map(tour => (
-                    !isFindTour(tour) ? null : (
-                    <div key={tour.id} className="card mb-3 hsshadow" style={{ maxWidth: '800px' }}>
+                filters_data.map(carts => (
+                    <div key={carts.tour.id} className="card mb-3 hsshadow" style={{ maxWidth: '1000px' }}>
                     <div className="row g-0">
                         <div className="col-md-4 d-flex">
-                            <img src={tour.image} className="img-fluid rounded-start" alt={tour.name} />
+                            <img src={carts.tour.image} className="img-fluid rounded-start" alt={carts.tour.name} />
                         </div>
                         <div className="col-md-8">
                             <div className="card-body">
-                                <h5 className="card-title">{tour.name}</h5>
-                                <p className="card-text">{tour.date} | {tour.start_day}</p>
+                                <h5 className="card-title">{carts.tour.name}</h5>
+                                <p className="card-text">{carts.tour.date} | {carts.tour.start_day}</p>
                                 <div className="d-flex justify-content-between">
-                                    <p className="card-text text-success">{tour.evaluate}</p>
-                                    <p className="card-text text-warning fs-5">{tour.price_Adult} VNĐ</p>
+                                    <p className="card-text text-success">{carts.tour.evaluate}</p>
+                                    <p className="card-text text"> </p>
+                                    <p className="card-text text">Tổng tiền: </p>
+                                    <p className="card-text text-success fs-5">{carts.total_price} VNĐ</p>
                                 </div>
                                 <div>
-                                <button className="btn btn-danger" onClick={e => deleteDataByTourId(tour.id)}>Xóa khỏi thanh toán</button>
+                                <button className="btn btn-danger" onClick={e => deleteDataByTourId(carts.id)}>Xóa khỏi thanh toán</button>
                                 </div>
                             </div>
                         </div>
@@ -94,7 +71,7 @@ const HistoryCart = () => {
                 </div>
                         )
                 
-                 ))
+                 )
         }
         <Footer/> 
 

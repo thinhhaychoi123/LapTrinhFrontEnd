@@ -5,6 +5,7 @@ import Footer from "../../component/Footer";
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from "react";
 import { FormInputInfoCustomer } from "../../component/checkout/FormInputInfoCustomer";
+import { ItemSeenCheckout } from "../../component/checkout/ItemSeenCheckout";
 
 const Booking = () => {
     const navigate = useNavigate();
@@ -21,6 +22,7 @@ const Booking = () => {
         <Header/>
         <Process step = '3'/>
             <h1>Điền thông tin </h1>
+            <ItemSeenCheckout datatour = {checkout} process={true}/>
             <FormInputInfoCustomer quantity = {quantity}></FormInputInfoCustomer>
         <Footer/>
     </div>);

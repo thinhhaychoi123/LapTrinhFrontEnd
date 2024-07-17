@@ -4,8 +4,9 @@ import Header from "../../component/Header";
 import { Process } from '../../component/Process';
 import PaymentTypeMap from '../../data/payment.json';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 import { useEffect } from 'react';
+import { ItemSeenCheckout } from '../../component/checkout/ItemSeenCheckout';
 
 const Payment = () => {
 
@@ -13,6 +14,7 @@ const Payment = () => {
     const [paymentType, setPaymentType] = useState(1);
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const checkout = useSelector(state => state.checkout);
 
     useEffect(() => {
         const storedUsername = sessionStorage.getItem('username') || localStorage.getItem('username');
@@ -40,6 +42,7 @@ const Payment = () => {
     return (<div>
         <Header/>
         <Process step = '4'/>
+        <ItemSeenCheckout datatour = {checkout} process={true}/>
         <select  name="selectType" onChange={handleOptionChange}>
             {PaymentTypeMap.paymenttype.map((list,second) => (
                 <>
@@ -56,7 +59,7 @@ const Payment = () => {
                             </label>
                             
                         </div>
-            <button onClick={handleContinue}>Xác nhận</button>
+            <button className = "btn btn-primary" onClick={handleContinue}>Tiếp tục</button>
         <Footer/>
     </div>);
 }

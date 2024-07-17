@@ -43,9 +43,8 @@ export const FormInputQuantityCustomer = ({tour,handleContinue}) => {
         handleContinue(total_adult,total_child,totalcost);
     }
     return (<div>
-        <div className="col-md-8">
-            <h3>Ten chuyen di: {tour.name}</h3>
-            <div className="card-body">
+        <div className="col-md-8" >
+            <div className="card-body" style={ {justifyContent : 'center',alignItems: 'center'} }>
                         <div className="row">
                             <div className="col-lg-6">
                                 <div className="form-group">
@@ -72,7 +71,7 @@ export const FormInputQuantityCustomer = ({tour,handleContinue}) => {
                                 </div>
                                 <h2>Tổng số vé: {temp}</h2>
                                 <h2>Tổng tiền: {totalcost} VNĐ</h2>
-                                <button onClick={e => continueToBooking()}>Tiếp tục</button>
+                                <button className = "btn btn-primary"onClick={e => continueToBooking()}>Tiếp tục</button>
                             </div>
                             </div>
                             
