@@ -5,6 +5,7 @@ import Footer from '../../component/Footer';
 import { useSelector,useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
+import { ItemSeenCheckout } from '../../component/checkout/ItemSeenCheckout';
 
 const Checkout = () => {
     const [isChecked, setIsChecked] = useState(false);
@@ -31,12 +32,13 @@ const Checkout = () => {
         }
         const userId = id;
         const tourId = datatour.id;
+        const tour = datatour.tour;
         const quantityAdult = datatour.quantityAdult;
         const quantityChild = datatour.quantityChild;
         const total_price = datatour.total_price;
         const payment_method = datatour.payment_method;
         const passenger_details =  datatour.passenger_details
-        const newTour = { userId,tourId, quantityAdult, quantityChild, total_price, payment_method, passenger_details };
+        const newTour = { userId,tourId, tour,quantityAdult, quantityChild, total_price, payment_method, passenger_details };
         sendToCheckoutData(newTour);
     }
     const sendToCheckoutData = (data) => {
@@ -71,12 +73,14 @@ const Checkout = () => {
             !isChecked ? 
             <>
              <Process step = '5'/>
-             <button onClick={onClickBuy}>XÁC NHẬN</button>
+             <ItemSeenCheckout datatour = {checkout} process={true}/>
+             <h1>Bạn có muốn xác nhận là thanh toán không</h1>
+             <button className = "btn btn-success" onClick={onClickBuy}>XÁC NHẬN</button>
             </>
             : <>
             <Process step = '6'/>
-                <h1>Bạn đã xác nhận thành công @</h1>
-                <h5>Hãy trở về Trang Chủ để xem những tour khác !</h5>
+                <h1>Bạn đã xác nhận tour thành công !</h1>
+                <h1>Hãy trở về Trang Chủ để xem những tour khác !</h1>
             </>
         }
                     <Footer/>
