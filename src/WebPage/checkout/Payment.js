@@ -5,6 +5,7 @@ import { Process } from '../../component/Process';
 import PaymentTypeMap from '../../data/payment.json';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 
 const Payment = () => {
 
@@ -12,6 +13,14 @@ const Payment = () => {
     const [paymentType, setPaymentType] = useState(1);
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    useEffect(() => {
+        const storedUsername = sessionStorage.getItem('username') || localStorage.getItem('username');
+        if (!storedUsername) {
+            navigate(`/user`); //Dẫn user về login, nếu chưa đăng nhập
+            return;
+        }
+    }, [navigate]);
     const handleCheckboxChange = (event) => {
         setCheckedRules(event.target.checked);
     };
