@@ -2,10 +2,19 @@ import { useSelector } from "react-redux";
 import { Process } from "../../component/Process";
 import Header from "../../component/Header";
 import Footer from "../../component/Footer";
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from "react";
 import { FormInputInfoCustomer } from "../../component/checkout/FormInputInfoCustomer";
 
 const Booking = () => {
-    
+    const navigate = useNavigate();
+    useEffect(() => {
+        const storedUsername = sessionStorage.getItem('username') || localStorage.getItem('username');
+        if (!storedUsername) {
+            navigate(`/user`); //Dẫn user về login, nếu chưa đăng nhập
+            return;
+        }
+    }, [navigate]);
     const checkout = useSelector(state => state.checkout);
     const quantity = checkout.quantityAdult + checkout.quantityChild;
     return (<div>

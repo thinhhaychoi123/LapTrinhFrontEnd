@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState,useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from "react-router-dom";
 import Footer from "../component/Footer";
@@ -6,13 +6,24 @@ import Header from "../component/Header";
 
 const ListCart = () => {
     const cart = useSelector(state => state.cart)
+    const [isLogin,setLogin] = useState(false)
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const selectTourMethod = (tour) => ({
         type: 'selectTour.select', payload: tour 
     });
-    
+    useEffect(() => {
+        const storedUsername = sessionStorage.getItem('username') || localStorage.getItem('username');
+        if (storedUsername) {
+            setLogin(true)
+        }
+    }, []);
     const handleSelectCart = (tour) => {
+        if(!isLogin){ 
+            //Nếu người dùng chưa đăng nhập, thông báo cho họ và dừng thực hiện các bước thanh toán
+            alert('Bạn phải đăng nhập thì mới được phép sử dụng thanh toán')
+            return;
+        }
         dispatch(selectTourMethod(tour));
         navigate(`/ticket`);
     };
